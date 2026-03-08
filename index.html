@@ -3,18 +3,78 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>VRMS Tour Travels | 10+ Years of Premium Service</title>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+
+    <!-- ===== PRIMARY SEO TAGS ===== -->
+    <title>VRMS Tour Travels | Cab Service Chennai to Tamil Nadu & Bangalore</title>
+    <meta name="description" content="Book reliable cabs from Chennai to Tamil Nadu destinations & Bangalore. VRMS Tour Travels – 10+ years of trusted service. Executive Sedans & Premium SUVs. Call 9840541625.">
+    <meta name="keywords" content="cab service Chennai, taxi Chennai, Chennai to Bangalore cab, Chennai to Tamil Nadu taxi, outstation cab Chennai, book cab Chennai, VRMS Tour Travels, Chennai cab booking, innova crysta Chennai, swift dzire Chennai, airport cab Chennai">
+    <meta name="author" content="VRMS Tour Travels">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://vrmstravels.com/">
+
+    <!-- ===== FAVICON (your logo) ===== -->
+    <link rel="icon" type="image/png" href="https://vrmstravels.com/logo.png">
+    <link rel="apple-touch-icon" href="https://vrmstravels.com/logo.png">
+
+    <!-- ===== OPEN GRAPH (WhatsApp / Facebook preview) ===== -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://vrmstravels.com/">
+    <meta property="og:title" content="VRMS Tour Travels | Trusted Cab Service from Chennai">
+    <meta property="og:description" content="10+ years of premium cab service from Chennai to Tamil Nadu & Bangalore. Book now via WhatsApp!">
+    <meta property="og:image" content="https://vrmstravels.com/logo.png">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta property="og:site_name" content="VRMS Tour Travels">
+    <meta property="og:locale" content="en_IN">
+
+    <!-- ===== TWITTER CARD ===== -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="VRMS Tour Travels | Trusted Cab Service from Chennai">
+    <meta name="twitter:description" content="10+ years of premium cab service from Chennai to Tamil Nadu & Bangalore. Book now via WhatsApp!">
+    <meta name="twitter:image" content="https://vrmstravels.com/logo.png">
+
+    <!-- ===== LOCAL BUSINESS SCHEMA (Google rich results) ===== -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "LocalBusiness",
+      "name": "VRMS Tour Travels",
+      "description": "Premium cab and taxi service from Chennai to Tamil Nadu destinations and Bangalore. 10+ years of trusted service.",
+      "url": "https://vrmstravels.com",
+      "telephone": "+919840541625",
+      "image": "/logo.png",
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Chennai",
+        "addressRegion": "Tamil Nadu",
+        "addressCountry": "IN"
+      },
+      "geo": {
+        "@type": "GeoCoordinates",
+        "latitude": 13.0827,
+        "longitude": 80.2707
+      },
+      "areaServed": [
+        "Chennai", "Tamil Nadu", "Bangalore", "Coimbatore", "Madurai", "Trichy", "Salem", "Vellore"
+      ],
+      "priceRange": "₹₹",
+      "openingHours": "Mo-Su 00:00-24:00",
+      "sameAs": []
+    }
+    </script>
+
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700;800&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     
     <style>
         :root {
-            /* Colors Derived from Logo */
             --logo-green: #2d5a27; 
             --logo-gold: #d4af37;
             --glass-white: rgba(255, 255, 255, 0.1);
             --glass-border: rgba(255, 255, 255, 0.2);
         }
+
+        * { box-sizing: border-box; }
 
         body {
             margin: 0;
@@ -24,9 +84,9 @@
             min-height: 100vh;
         }
 
-        /* --- Glass Navigation --- */
+        /* --- Navigation --- */
         nav {
-            padding: 20px 5%;
+            padding: 16px 5%;
             display: flex;
             justify-content: space-between;
             align-items: center;
@@ -38,17 +98,61 @@
             z-index: 1000;
         }
 
+        .nav-brand {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .nav-logo {
+            width: 44px;
+            height: 44px;
+            border-radius: 8px;
+            object-fit: contain;
+            background: rgba(255,255,255,0.08);
+            padding: 3px;
+        }
+
         .logo-text {
             font-family: 'Montserrat', sans-serif;
-            font-size: 1.4rem;
+            font-size: 1.2rem;
             color: var(--logo-gold);
             text-transform: uppercase;
             letter-spacing: 1px;
+            line-height: 1.2;
         }
 
-        /* --- Hero & Booking Section --- */
+        .logo-text span {
+            display: block;
+            font-size: 0.65rem;
+            color: rgba(255,255,255,0.6);
+            font-family: 'Poppins', sans-serif;
+            font-weight: 300;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+        }
+
+        .nav-phone {
+            font-size: 0.9rem;
+            color: var(--logo-gold);
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+
+        .hero-logo {
+            width: 180px;
+            height: 180px;
+            object-fit: contain;
+            border-radius: 20px;
+            margin-bottom: 20px;
+            filter: drop-shadow(0 8px 24px rgba(212,175,55,0.35));
+        }
+
+        /* --- Hero --- */
         .hero {
-            padding: 80px 5%;
+            padding: 60px 5% 40px;
             text-align: center;
         }
 
@@ -60,13 +164,28 @@
             border-radius: 50px;
             font-weight: 700;
             margin-bottom: 20px;
-            font-size: 0.9rem;
+            font-size: 0.85rem;
+            letter-spacing: 1px;
         }
 
+        h1 {
+            font-family: 'Montserrat', sans-serif;
+            font-size: clamp(1.8rem, 5vw, 2.8rem);
+            margin: 0 0 10px;
+            line-height: 1.2;
+        }
+
+        .hero-sub {
+            opacity: 0.75;
+            font-size: 1rem;
+            margin-bottom: 0;
+        }
+
+        /* --- Booking Box --- */
         .glass-booking-box {
-            max-width: 500px;
-            margin: 40px auto;
-            padding: 40px;
+            max-width: 480px;
+            margin: 36px auto;
+            padding: 36px;
             background: var(--glass-white);
             backdrop-filter: blur(20px);
             border: 1px solid var(--glass-border);
@@ -74,90 +193,207 @@
             box-shadow: 0 15px 35px rgba(0,0,0,0.5);
         }
 
+        .glass-booking-box h3 {
+            margin-top: 0;
+            color: var(--logo-gold);
+            font-family: 'Montserrat', sans-serif;
+            font-size: 1.2rem;
+        }
+
         .input-group {
-            margin-bottom: 20px;
+            margin-bottom: 18px;
             text-align: left;
         }
 
-        label { display: block; margin-bottom: 8px; font-size: 0.9rem; color: var(--logo-gold); }
+        label {
+            display: block;
+            margin-bottom: 7px;
+            font-size: 0.85rem;
+            color: var(--logo-gold);
+            font-weight: 600;
+        }
 
         input, select {
             width: 100%;
-            padding: 14px;
+            padding: 13px 16px;
             border-radius: 12px;
             border: 1px solid var(--glass-border);
             background: rgba(255, 255, 255, 0.05);
             color: white;
-            box-sizing: border-box;
-            font-size: 1rem;
+            font-size: 0.95rem;
+            font-family: 'Poppins', sans-serif;
+            outline: none;
+            transition: border-color 0.2s;
         }
+
+        input:focus, select:focus {
+            border-color: var(--logo-gold);
+        }
+
+        select option { background: #1a3018; color: white; }
 
         .btn-whatsapp {
             width: 100%;
-            padding: 16px;
+            padding: 15px;
             background: linear-gradient(45deg, #25d366, #128c7e);
             border: none;
             border-radius: 12px;
             color: white;
             font-weight: 700;
-            font-size: 1.1rem;
+            font-size: 1.05rem;
             cursor: pointer;
             transition: 0.3s;
             display: flex;
             justify-content: center;
             align-items: center;
             gap: 10px;
+            font-family: 'Poppins', sans-serif;
+            margin-top: 6px;
         }
 
-        .btn-whatsapp:hover { transform: translateY(-3px); box-shadow: 0 10px 20px rgba(37, 211, 102, 0.3); }
+        .btn-whatsapp:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 20px rgba(37, 211, 102, 0.35);
+        }
 
-        /* --- Vehicle Section --- */
-        .fleet { display: flex; justify-content: center; gap: 20px; padding: 40px 5%; flex-wrap: wrap; }
-        
+        /* --- Fleet Section --- */
+        .section-title {
+            text-align: center;
+            font-family: 'Montserrat', sans-serif;
+            color: var(--logo-gold);
+            font-size: 1.4rem;
+            margin: 10px 0 20px;
+        }
+
+        .fleet {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            padding: 10px 5% 50px;
+            flex-wrap: wrap;
+        }
+
         .vehicle-card {
             background: var(--glass-white);
-            padding: 30px;
+            padding: 28px 24px;
             border-radius: 20px;
             border: 1px solid var(--glass-border);
-            width: 280px;
+            width: 260px;
             text-align: center;
             transition: 0.3s;
         }
-        
-        .vehicle-card:hover { border-color: var(--logo-gold); }
-        .vehicle-card i { font-size: 2.5rem; color: var(--logo-gold); margin-bottom: 15px; }
+
+        .vehicle-card:hover {
+            border-color: var(--logo-gold);
+            transform: translateY(-4px);
+        }
+
+        .vehicle-card i {
+            font-size: 2.2rem;
+            color: var(--logo-gold);
+            margin-bottom: 12px;
+        }
+
+        .vehicle-card h4 {
+            margin: 0 0 8px;
+            font-family: 'Montserrat', sans-serif;
+            font-size: 1rem;
+        }
+
+        .vehicle-card p {
+            font-size: 0.8rem;
+            opacity: 0.7;
+            margin: 0;
+            line-height: 1.6;
+        }
+
+        /* --- Destinations (SEO keywords as visible content) --- */
+        .destinations {
+            padding: 30px 5%;
+            text-align: center;
+            border-top: 1px solid var(--glass-border);
+        }
+
+        .dest-tags {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 10px;
+            margin-top: 16px;
+        }
+
+        .dest-tag {
+            padding: 7px 16px;
+            border: 1px solid var(--glass-border);
+            border-radius: 50px;
+            font-size: 0.82rem;
+            opacity: 0.8;
+            transition: 0.2s;
+        }
+
+        .dest-tag:hover {
+            border-color: var(--logo-gold);
+            opacity: 1;
+            color: var(--logo-gold);
+        }
+
+        /* --- Footer --- */
+        footer {
+            text-align: center;
+            padding: 24px 5%;
+            border-top: 1px solid var(--glass-border);
+            font-size: 0.8rem;
+            opacity: 0.6;
+        }
     </style>
 </head>
 <body>
 
     <nav>
-        <div class="logo-text">VRMS TOUR TRAVELS</div>
-        <div style="font-size: 0.9rem;"><i class="fas fa-phone"></i> 9840541625</div>
+        <div class="nav-brand">
+            <img 
+                src="https://vrmstravels.com/logo.png" 
+                alt="VRMS Tour Travels Logo" 
+                class="nav-logo"
+            >
+            <div class="logo-text">
+                VRMS Tour Travels
+                <span>Chennai Cab Service</span>
+            </div>
+        </div>
+        <a href="tel:+919840541625" class="nav-phone">
+            <i class="fas fa-phone"></i> 9840541625
+        </a>
     </nav>
 
     <section class="hero">
-        <span class="experience-badge">10+ YEARS OF TRUSTED SERVICE</span>
-        <h1 style="font-family: 'Montserrat'; font-size: 2.5rem;">Premium Cabs from Chennai</h1>
-        <p style="opacity: 0.8;">To Tamil Nadu Destinations & Bangalore</p>
+        <img src="https://vrmstravels.com/logo.png" alt="VRMS Tour Travels" class="hero-logo">
+        <h1>Premium Cab Service<br>from Chennai</h1>
+        <p class="hero-sub">To Tamil Nadu Destinations &amp; Bangalore | Available 24/7</p>
 
         <div class="glass-booking-box">
-            <h3 style="margin-top: 0; color: var(--logo-gold);">Quick Booking</h3>
+            <h3>Quick Booking</h3>
             
             <div class="input-group">
-                <label>Full Name</label>
-                <input type="text" id="userName" placeholder="Enter your name">
+                <label for="userName">Full Name</label>
+                <input type="text" id="userName" placeholder="Enter your name" autocomplete="name">
             </div>
 
             <div class="input-group">
-                <label>Mobile Number</label>
-                <input type="tel" id="userPhone" placeholder="Enter mobile number">
+                <label for="userPhone">Mobile Number</label>
+                <input type="tel" id="userPhone" placeholder="Enter mobile number" autocomplete="tel">
             </div>
 
             <div class="input-group">
-                <label>Select Vehicle</label>
+                <label for="destination">Destination</label>
+                <input type="text" id="destination" placeholder="e.g. Bangalore, Madurai, Coimbatore">
+            </div>
+
+            <div class="input-group">
+                <label for="vehicleType">Select Vehicle</label>
                 <select id="vehicleType">
-                    <option value="Executive Sedan">Executive Sedan (4+1)</option>
-                    <option value="Premium SUV">Premium SUV (6+1)</option>
+                    <option value="Executive Sedan (Swift Dzire / Etios)">Executive Sedan – Swift Dzire / Etios (4+1)</option>
+                    <option value="Premium SUV (Innova Crysta / XUV)">Premium SUV – Innova Crysta / XUV (6+1)</option>
                 </select>
             </div>
 
@@ -167,34 +403,61 @@
         </div>
     </section>
 
+    <h2 class="section-title">Our Fleet</h2>
     <div class="fleet">
         <div class="vehicle-card">
             <i class="fas fa-car"></i>
             <h4>Executive Sedan</h4>
-            <p style="font-size: 0.8rem; opacity: 0.7;">Swift Dzire / Etios<br>Perfect for small families</p>
+            <p>Swift Dzire / Etios<br>Perfect for small families &amp; solo trips</p>
         </div>
         <div class="vehicle-card">
-            <i class="fas fa-suv"></i>
+            <i class="fas fa-truck-pickup"></i>
             <h4>Premium SUV</h4>
-            <p style="font-size: 0.8rem; opacity: 0.7;">Innova Crysta / XUV<br>Luxury for long trips</p>
+            <p>Innova Crysta / XUV<br>Comfort &amp; luxury for long trips</p>
         </div>
     </div>
 
+    <!-- Destinations visible for SEO -->
+    <section class="destinations">
+        <h2 class="section-title" style="margin:0 0 6px;">Popular Routes from Chennai</h2>
+        <p style="opacity:0.6; font-size:0.85rem; margin:0 0 12px;">We cover all major Tamil Nadu destinations and beyond</p>
+        <div class="dest-tags">
+            <span class="dest-tag">Chennai → Bangalore</span>
+            <span class="dest-tag">Chennai → Coimbatore</span>
+            <span class="dest-tag">Chennai → Madurai</span>
+            <span class="dest-tag">Chennai → Trichy</span>
+            <span class="dest-tag">Chennai → Salem</span>
+            <span class="dest-tag">Chennai → Vellore</span>
+            <span class="dest-tag">Chennai → Pondicherry</span>
+            <span class="dest-tag">Chennai → Tirupati</span>
+            <span class="dest-tag">Chennai → Ooty</span>
+            <span class="dest-tag">Chennai → Kodaikanal</span>
+            <span class="dest-tag">Chennai Airport Pickup</span>
+            <span class="dest-tag">Chennai Airport Drop</span>
+        </div>
+    </section>
+
+    <footer>
+        <p>© 2025 VRMS Tour Travels, Chennai, Tamil Nadu | Cab Booking: <a href="tel:+919840541625" style="color:var(--logo-gold)">9840541625</a></p>
+        <p style="margin:4px 0 0;">Outstation Cab Service · Airport Transfers · Corporate Travel</p>
+    </footer>
+
     <script>
         function sendToWhatsApp() {
-            const name = document.getElementById('userName').value;
-            const phone = document.getElementById('userPhone').value;
+            const name = document.getElementById('userName').value.trim();
+            const phone = document.getElementById('userPhone').value.trim();
             const vehicle = document.getElementById('vehicleType').value;
+            const destination = document.getElementById('destination').value.trim();
 
-            if(!name || !phone) {
+            if (!name || !phone) {
                 alert("Please fill in your name and mobile number.");
                 return;
             }
 
-            const message = `Hello VRMS Tour Travels!%0A%0A*Booking Inquiry*%0AName: ${name}%0AMobile: ${phone}%0AVehicle: ${vehicle}%0A%0AI want to book a cab from Chennai. Please provide the best quote.`;
+            const dest = destination || 'Not specified';
+            const message = `Hello VRMS Tour Travels!%0A%0A*New Booking Inquiry*%0A%0A👤 Name: ${encodeURIComponent(name)}%0A📱 Mobile: ${encodeURIComponent(phone)}%0A📍 Destination: ${encodeURIComponent(dest)}%0A🚗 Vehicle: ${encodeURIComponent(vehicle)}%0A%0AKindly provide the best quote. Thank you!`;
             
-            const whatsappURL = `https://wa.me/919840541625?text=${message}`;
-            window.open(whatsappURL, '_blank');
+            window.open(`https://wa.me/919840541625?text=${message}`, '_blank');
         }
     </script>
 
