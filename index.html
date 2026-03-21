@@ -1,545 +1,641 @@
 <!DOCTYPE html>
 <html lang="en" id="htmlRoot">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-    <title>VRMS Tour Travels | Taxi Service Chennai to Tamil Nadu & Bangalore</title>
-    <meta name="description" content="Book reliable taxis from Chennai to Tamil Nadu destinations & Bangalore. VRMS Tour Travels- Trusted service. Executive Sedans & Premium SUVs. Call 9840541625.">
-    <meta name="keywords" content="taxi service Chennai, taxi Chennai, Chennai to Bangalore taxi, Chennai to Tamil Nadu taxi, outstation taxi Chennai, book taxi Chennai, VRMS Tour Travels, Chennai taxi booking, innova crysta Chennai, swift dzire Chennai, airport taxi Chennai">
-    <meta name="author" content="VRMS Tour Travels">
-    <meta name="robots" content="index, follow">
-    <link rel="canonical" href="https://vrmstravels.com/">
-
-    <link rel="icon" type="image/png" href="https://vrmstravels.com/logo.png">
-    <link rel="apple-touch-icon" href="https://vrmstravels.com/logo.png">
-
-    <meta property="og:type" content="website">
-    <meta property="og:url" content="https://vrmstravels.com/">
-    <meta property="og:title" content="VRMS Tour Travels | Trusted Taxi Service from Chennai">
-    <meta property="og:description" content="Premium taxi service from Chennai to Tamil Nadu & Bangalore. Book now!">
-    <meta property="og:image" content="https://vrmstravels.com/logo.png">
-    <meta property="og:image:width" content="1200">
-    <meta property="og:image:height" content="630">
-    <meta property="og:site_name" content="VRMS Tour Travels">
-    <meta property="og:locale" content="en_IN">
-
-    <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="VRMS Tour Travels | Trusted Taxi Service from Chennai">
-    <meta name="twitter:description" content="Premium taxi service from Chennai to Tamil Nadu & Bangalore. Book now!">
-    <meta name="twitter:image" content="https://vrmstravels.com/logo.png">
-
-    <script type="application/ld+json">
-    {
-      "@context": "https://schema.org",
-      "@type": "LocalBusiness",
-      "name": "VRMS Tour Travels",
-      "description": "Premium cab and taxi service from Chennai to Tamil Nadu destinations and Bangalore. 10+ years of trusted service.",
-      "url": "https://vrmstravels.com",
-      "telephone": "+919840541625",
-      "image": "https://vrmstravels.com/logo.png",
-      "address": {
-        "@type": "PostalAddress",
-        "addressLocality": "Chennai",
-        "addressRegion": "Tamil Nadu",
-        "addressCountry": "IN"
-      },
-      "areaServed": ["Chennai","Tamil Nadu","Bangalore","Coimbatore","Madurai","Trichy","Salem","Vellore"],
-      "priceRange": "₹₹",
-      "openingHours": "Mo-Su 00:00-24:00"
-    }
-    </script>
-
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700;800&family=Poppins:wght@300;400;600&family=Hind+Madurai:wght@400;600;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-
-    <style>
-        :root {
-            --logo-green: #2d5a27;
-            --logo-gold: #d4af37;
-            --glass-white: rgba(255, 255, 255, 0.1);
-            --glass-border: rgba(255, 255, 255, 0.2);
-        }
-
-        * { box-sizing: border-box; }
-
-        body {
-            margin: 0;
-            font-family: 'Poppins', sans-serif;
-            background: linear-gradient(135deg, #1a3018, #2d5a27, #121212);
-            color: #fff;
-            min-height: 100vh;
-        }
-
-        body.tamil-mode {
-            font-family: 'Hind Madurai', sans-serif;
-        }
-
-        nav {
-            padding: 16px 5%;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            backdrop-filter: blur(10px);
-            background: rgba(0, 0, 0, 0.3);
-            border-bottom: 1px solid var(--glass-border);
-            position: sticky;
-            top: 0;
-            z-index: 1000;
-            flex-wrap: wrap;
-            gap: 10px;
-        }
-
-        .nav-brand {
-            display: flex;
-            align-items: center;
-            gap: 12px;
-        }
-
-        .nav-logo {
-            width: 44px;
-            height: 44px;
-            border-radius: 8px;
-            object-fit: contain;
-            background: rgba(255,255,255,0.08);
-            padding: 3px;
-        }
-
-        .logo-text {
-            font-family: 'Montserrat', sans-serif;
-            font-size: 1.2rem;
-            color: var(--logo-gold);
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            line-height: 1.2;
-        }
-
-        .logo-text span {
-            display: block;
-            font-size: 0.65rem;
-            color: rgba(255,255,255,0.6);
-            font-family: 'Poppins', sans-serif;
-            font-weight: 300;
-            letter-spacing: 2px;
-            text-transform: uppercase;
-        }
-
-        .nav-right {
-            display: flex;
-            align-items: center;
-            gap: 14px;
-        }
-
-        /* Language Toggle */
-        .lang-toggle {
-            display: flex;
-            align-items: center;
-            background: rgba(255,255,255,0.08);
-            border: 1px solid var(--glass-border);
-            border-radius: 50px;
-            padding: 4px;
-            gap: 2px;
-        }
-
-        .lang-btn {
-            padding: 5px 14px;
-            border: none;
-            border-radius: 50px;
-            font-size: 0.78rem;
-            font-weight: 700;
-            cursor: pointer;
-            transition: all 0.25s;
-            background: transparent;
-            color: rgba(255,255,255,0.55);
-            letter-spacing: 0.5px;
-            font-family: 'Poppins', sans-serif;
-        }
-
-        .lang-btn.active {
-            background: var(--logo-gold);
-            color: #000;
-        }
-
-        .nav-phone {
-            font-size: 0.9rem;
-            color: var(--logo-gold);
-            text-decoration: none;
-            display: flex;
-            align-items: center;
-            gap: 6px;
-        }
-
-        /* Hero */
-        .hero {
-            padding: 50px 5% 30px;
-            text-align: center;
-        }
-
-        .hero-logo {
-            width: 160px;
-            height: 160px;
-            object-fit: contain;
-            border-radius: 20px;
-            margin-bottom: 20px;
-            filter: drop-shadow(0 8px 24px rgba(212,175,55,0.4));
-            display: block;
-            margin-left: auto;
-            margin-right: auto;
-        }
-
-        h1 {
-            font-family: 'Montserrat', sans-serif;
-            font-size: clamp(1.8rem, 5vw, 2.8rem);
-            margin: 0 0 10px;
-            line-height: 1.2;
-        }
-
-        body.tamil-mode h1 {
-            font-family: 'Hind Madurai', sans-serif;
-            font-weight: 700;
-        }
-
-        .hero-sub {
-            opacity: 0.75;
-            font-size: 1rem;
-            margin-bottom: 0;
-        }
-
-        /* Booking Box */
-        .glass-booking-box {
-            max-width: 480px;
-            margin: 30px auto;
-            padding: 36px;
-            background: var(--glass-white);
-            backdrop-filter: blur(20px);
-            border: 1px solid var(--glass-border);
-            border-radius: 24px;
-            box-shadow: 0 15px 35px rgba(0,0,0,0.5);
-        }
-
-        .glass-booking-box h3 {
-            margin-top: 0;
-            color: var(--logo-gold);
-            font-family: 'Montserrat', sans-serif;
-            font-size: 1.2rem;
-        }
-
-        body.tamil-mode .glass-booking-box h3 {
-            font-family: 'Hind Madurai', sans-serif;
-        }
-
-        .input-group { margin-bottom: 18px; text-align: left; }
-
-        label {
-            display: block;
-            margin-bottom: 7px;
-            font-size: 0.85rem;
-            color: var(--logo-gold);
-            font-weight: 600;
-        }
-
-        input, select {
-            width: 100%;
-            padding: 13px 16px;
-            border-radius: 12px;
-            border: 1px solid var(--glass-border);
-            background: rgba(255,255,255,0.05);
-            color: white;
-            font-size: 0.95rem;
-            font-family: inherit;
-            outline: none;
-            transition: border-color 0.2s;
-        }
-
-        input:focus, select:focus { border-color: var(--logo-gold); }
-        select option { background: #1a3018; color: white; }
-
-        .btn-whatsapp {
-            width: 100%;
-            padding: 15px;
-            background: linear-gradient(45deg, #25d366, #128c7e);
-            border: none;
-            border-radius: 12px;
-            color: white;
-            font-weight: 700;
-            font-size: 1.05rem;
-            cursor: pointer;
-            transition: 0.3s;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            gap: 10px;
-            font-family: inherit;
-            margin-top: 6px;
-        }
-
-        .btn-whatsapp:hover { transform: translateY(-3px); box-shadow: 0 10px 20px rgba(37,211,102,0.35); }
-
-        /* Fleet */
-        .section-title {
-            text-align: center;
-            font-family: 'Montserrat', sans-serif;
-            color: var(--logo-gold);
-            font-size: 1.4rem;
-            margin: 10px 0 20px;
-        }
-
-        body.tamil-mode .section-title {
-            font-family: 'Hind Madurai', sans-serif;
-        }
-
-        .fleet {
-            display: flex;
-            justify-content: center;
-            gap: 20px;
-            padding: 10px 5% 40px;
-            flex-wrap: wrap;
-        }
-
-        .vehicle-card {
-            background: var(--glass-white);
-            padding: 28px 24px;
-            border-radius: 20px;
-            border: 1px solid var(--glass-border);
-            width: 260px;
-            text-align: center;
-            transition: 0.3s;
-        }
-
-        .vehicle-card:hover { border-color: var(--logo-gold); transform: translateY(-4px); }
-        .vehicle-card i { font-size: 2.2rem; color: var(--logo-gold); margin-bottom: 12px; }
-
-        .vehicle-card h4 {
-            margin: 0 0 8px;
-            font-family: 'Montserrat', sans-serif;
-            font-size: 1rem;
-        }
-
-        body.tamil-mode .vehicle-card h4 { font-family: 'Hind Madurai', sans-serif; }
-        .vehicle-card p { font-size: 0.8rem; opacity: 0.7; margin: 0; line-height: 1.6; }
-
-        /* Destinations */
-        .destinations {
-            padding: 30px 5%;
-            text-align: center;
-            border-top: 1px solid var(--glass-border);
-        }
-
-        .dest-tags {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
-            gap: 10px;
-            margin-top: 16px;
-        }
-
-        .dest-tag {
-            padding: 7px 16px;
-            border: 1px solid var(--glass-border);
-            border-radius: 50px;
-            font-size: 0.82rem;
-            opacity: 0.8;
-            transition: 0.2s;
-        }
-
-        .dest-tag:hover { border-color: var(--logo-gold); opacity: 1; color: var(--logo-gold); }
-
-        footer {
-            text-align: center;
-            padding: 24px 5%;
-            border-top: 1px solid var(--glass-border);
-            font-size: 0.8rem;
-            opacity: 0.6;
-        }
-
-        footer a { color: var(--logo-gold); }
-    </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>VRMS Tour Travels | Taxi Service Chennai to Tamil Nadu & Bangalore</title>
+<meta name="description" content="Book reliable taxis from Chennai to Tamil Nadu destinations & Bangalore. VRMS Tour Travels- Trusted service. Executive Sedans & Premium SUVs. Call 9840541625.">
+<meta name="keywords" content="taxi service Chennai, taxi Chennai, Chennai to Bangalore taxi, Chennai to Tamil Nadu taxi, outstation taxi Chennai, book taxi Chennai, VRMS Tour Travels">
+<meta name="author" content="VRMS Tour Travels">
+<meta name="robots" content="index, follow">
+<link rel="canonical" href="https://vrmstravels.com/">
+<link rel="icon" type="image/png" href="https://vrmstravels.com/logo.png">
+<link rel="apple-touch-icon" href="https://vrmstravels.com/logo.png">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://vrmstravels.com/">
+<meta property="og:title" content="VRMS Tour Travels | Trusted Taxi Service from Chennai">
+<meta property="og:description" content="Premium taxi service from Chennai to Tamil Nadu & Bangalore. Book now!">
+<meta property="og:image" content="https://vrmstravels.com/logo.png">
+<meta property="og:site_name" content="VRMS Tour Travels">
+<meta property="og:locale" content="en_IN">
+<meta name="twitter:card" content="summary_large_image">
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"LocalBusiness","name":"VRMS Tour Travels","url":"https://vrmstravels.com","telephone":"+919840541625","image":"https://vrmstravels.com/logo.png","address":{"@type":"PostalAddress","addressLocality":"Chennai","addressRegion":"Tamil Nadu","addressCountry":"IN"},"priceRange":"₹₹","openingHours":"Mo-Su 00:00-24:00"}
+</script>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700;800&family=Poppins:wght@300;400;600&family=Hind+Madurai:wght@400;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+<style>
+:root {
+  --gold: #d4af37;
+  --gold-dim: rgba(212,175,55,0.15);
+  --glass: rgba(255,255,255,0.07);
+  --glass-border: rgba(255,255,255,0.15);
+}
+* { box-sizing: border-box; margin: 0; padding: 0; }
+body {
+  font-family: 'Poppins', sans-serif;
+  background: linear-gradient(145deg, #0f1f0d 0%, #1e3d1a 40%, #0d0d0d 100%);
+  color: #fff; min-height: 100vh;
+}
+body.tamil-mode { font-family: 'Hind Madurai', sans-serif; }
+nav {
+  padding: 14px 5%;
+  display: flex; justify-content: space-between; align-items: center;
+  background: rgba(0,0,0,0.35); backdrop-filter: blur(12px);
+  border-bottom: 1px solid var(--glass-border);
+  position: sticky; top: 0; z-index: 1000; flex-wrap: wrap; gap: 10px;
+}
+.nav-brand { display: flex; align-items: center; gap: 12px; }
+.nav-logo { width: 42px; height: 42px; border-radius: 8px; object-fit: contain; background: rgba(255,255,255,0.06); padding: 3px; }
+.logo-text { font-family: 'Montserrat', sans-serif; font-size: 1.1rem; color: var(--gold); text-transform: uppercase; letter-spacing: 1px; }
+.nav-right { display: flex; align-items: center; gap: 12px; }
+.lang-toggle { display: flex; align-items: center; background: rgba(255,255,255,0.06); border: 1px solid var(--glass-border); border-radius: 50px; padding: 3px; gap: 2px; }
+.lang-btn { padding: 4px 13px; border: none; border-radius: 50px; font-size: 0.75rem; font-weight: 700; cursor: pointer; transition: all 0.2s; background: transparent; color: rgba(255,255,255,0.5); font-family: 'Poppins', sans-serif; }
+.lang-btn.active { background: var(--gold); color: #000; }
+.nav-phone { font-size: 0.88rem; color: var(--gold); text-decoration: none; display: flex; align-items: center; gap: 6px; }
+.hero { padding: 44px 5% 24px; text-align: center; }
+.hero-logo { width: 140px; height: 140px; object-fit: contain; border-radius: 18px; margin-bottom: 18px; filter: drop-shadow(0 8px 28px rgba(212,175,55,0.45)); display: block; margin-left: auto; margin-right: auto; }
+h1 { font-family: 'Montserrat', sans-serif; font-size: clamp(1.6rem, 5vw, 2.6rem); margin-bottom: 8px; line-height: 1.2; }
+body.tamil-mode h1 { font-family: 'Hind Madurai', sans-serif; font-weight: 700; }
+.hero-sub { opacity: 0.7; font-size: 0.95rem; }
+.glass-booking-box {
+  max-width: 500px; margin: 28px auto; padding: 32px 30px;
+  background: var(--glass); backdrop-filter: blur(24px);
+  border: 1px solid var(--glass-border); border-radius: 24px;
+  box-shadow: 0 20px 60px rgba(0,0,0,0.5);
+}
+.glass-booking-box h3 { color: var(--gold); font-family: 'Montserrat', sans-serif; font-size: 1.15rem; margin-bottom: 22px; }
+body.tamil-mode .glass-booking-box h3 { font-family: 'Hind Madurai', sans-serif; }
+.input-group { margin-bottom: 16px; text-align: left; position: relative; }
+label { display: block; margin-bottom: 6px; font-size: 0.82rem; color: var(--gold); font-weight: 600; letter-spacing: 0.3px; }
+input[type="text"], input[type="tel"], select {
+  width: 100%; padding: 12px 15px;
+  border-radius: 11px; border: 1px solid var(--glass-border);
+  background: rgba(255,255,255,0.06); color: white;
+  font-size: 0.93rem; font-family: inherit; outline: none;
+  transition: border-color 0.2s, background 0.2s;
+}
+input[type="text"]:focus, input[type="tel"]:focus, select:focus { border-color: var(--gold); background: rgba(255,255,255,0.09); }
+input::placeholder { color: rgba(255,255,255,0.35); }
+select option { background: #1a3018; color: white; }
+.autosuggest-wrapper { position: relative; }
+.suggestions-dropdown {
+  position: absolute; top: calc(100% + 5px); left: 0; right: 0;
+  background: #172e14; border: 1px solid var(--gold);
+  border-radius: 13px; overflow: hidden; z-index: 9999;
+  box-shadow: 0 16px 40px rgba(0,0,0,0.7);
+  max-height: 260px; overflow-y: auto; display: none;
+}
+.suggestions-dropdown.open { display: block; }
+.suggestion-item {
+  padding: 10px 15px; cursor: pointer;
+  border-bottom: 1px solid rgba(255,255,255,0.05);
+  transition: background 0.12s; display: flex; align-items: flex-start; gap: 10px;
+}
+.suggestion-item:last-child { border-bottom: none; }
+.suggestion-item:hover, .suggestion-item.active { background: rgba(212,175,55,0.12); }
+.suggestion-icon { color: var(--gold); font-size: 0.8rem; margin-top: 3px; flex-shrink: 0; }
+.suggestion-text { display: flex; flex-direction: column; min-width: 0; }
+.suggestion-name { font-size: 0.86rem; font-weight: 600; color: #fff; line-height: 1.3; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.suggestion-addr { font-size: 0.72rem; opacity: 0.5; margin-top: 2px; line-height: 1.3; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.suggestion-loading, .suggestion-empty { padding: 13px 15px; font-size: 0.82rem; opacity: 0.55; text-align: center; }
+.mappls-attr { font-size: 0.65rem; opacity: 0.35; text-align: right; margin-top: 3px; }
+.mappls-attr a { color: var(--gold); text-decoration: none; }
+.dt-picker { position: relative; }
+.dt-trigger {
+  width: 100%; padding: 12px 15px;
+  border-radius: 11px; border: 1px solid var(--glass-border);
+  background: rgba(255,255,255,0.06); color: white;
+  font-size: 0.88rem; font-family: inherit;
+  cursor: pointer; display: flex; align-items: center; gap: 8px;
+  transition: border-color 0.2s, background 0.2s; user-select: none;
+}
+.dt-trigger:hover, .dt-trigger.open { border-color: var(--gold); background: rgba(255,255,255,0.09); }
+.dt-trigger .dt-icon { color: var(--gold); font-size: 0.85rem; flex-shrink: 0; }
+.dt-trigger .dt-text { flex: 1; font-size: 0.82rem; }
+.dt-trigger .dt-text.placeholder { color: rgba(255,255,255,0.35); }
+.dt-panel {
+  position: absolute; top: calc(100% + 6px); left: 0;
+  background: #172e14; border: 1px solid var(--gold);
+  border-radius: 16px; z-index: 9999;
+  box-shadow: 0 20px 50px rgba(0,0,0,0.7);
+  width: 280px; display: none; overflow: hidden;
+}
+.dt-panel.open { display: block; }
+.cal-header { display: flex; align-items: center; justify-content: space-between; padding: 14px 16px 10px; border-bottom: 1px solid rgba(255,255,255,0.08); }
+.cal-nav { background: none; border: none; color: var(--gold); cursor: pointer; font-size: 1rem; padding: 4px 8px; border-radius: 6px; transition: background 0.15s; }
+.cal-nav:hover { background: var(--gold-dim); }
+.cal-month-year { font-size: 0.9rem; font-weight: 600; color: #fff; font-family: 'Montserrat', sans-serif; }
+.cal-days-header { display: grid; grid-template-columns: repeat(7,1fr); padding: 6px 10px 2px; }
+.cal-day-name { text-align: center; font-size: 0.68rem; color: var(--gold); font-weight: 600; opacity: 0.8; }
+.cal-grid { display: grid; grid-template-columns: repeat(7,1fr); padding: 4px 10px 10px; gap: 2px; }
+.cal-cell { text-align: center; padding: 7px 2px; font-size: 0.8rem; border-radius: 8px; cursor: pointer; transition: background 0.15s, color 0.15s; color: rgba(255,255,255,0.85); }
+.cal-cell:hover:not(.disabled):not(.empty) { background: var(--gold-dim); color: var(--gold); }
+.cal-cell.today { color: var(--gold); font-weight: 600; }
+.cal-cell.selected { background: var(--gold); color: #000; font-weight: 700; }
+.cal-cell.disabled { opacity: 0.25; cursor: default; }
+.cal-cell.empty { cursor: default; }
+.time-section { border-top: 1px solid rgba(255,255,255,0.08); padding: 12px 16px 14px; }
+.time-label { font-size: 0.72rem; color: var(--gold); font-weight: 600; margin-bottom: 8px; letter-spacing: 0.3px; }
+.time-inputs { display: flex; align-items: center; gap: 8px; justify-content: center; }
+.time-spinner { display: flex; flex-direction: column; align-items: center; gap: 2px; }
+.time-spin-btn { background: rgba(255,255,255,0.08); border: none; color: rgba(255,255,255,0.7); width: 30px; height: 22px; border-radius: 5px; cursor: pointer; font-size: 0.7rem; display: flex; align-items: center; justify-content: center; transition: background 0.15s; }
+.time-spin-btn:hover { background: var(--gold-dim); color: var(--gold); }
+.time-val { background: rgba(255,255,255,0.06); border: 1px solid var(--glass-border); color: #fff; border-radius: 8px; padding: 6px 0; font-size: 1.1rem; font-weight: 600; font-family: 'Montserrat', sans-serif; text-align: center; width: 52px; outline: none; -moz-appearance: textfield; }
+.time-val::-webkit-outer-spin-button, .time-val::-webkit-inner-spin-button { -webkit-appearance: none; }
+.time-val:focus { border-color: var(--gold); }
+.time-colon { font-size: 1.3rem; font-weight: 700; color: var(--gold); line-height: 1; margin-top: -4px; }
+.ampm-toggle { display: flex; flex-direction: column; gap: 3px; }
+.ampm-btn { background: rgba(255,255,255,0.06); border: 1px solid var(--glass-border); color: rgba(255,255,255,0.5); border-radius: 6px; padding: 4px 8px; font-size: 0.7rem; font-weight: 700; cursor: pointer; transition: all 0.15s; font-family: 'Poppins', sans-serif; }
+.ampm-btn.active { background: var(--gold); color: #000; border-color: var(--gold); }
+.dt-confirm { display: block; width: calc(100% - 32px); margin: 0 16px 14px; padding: 9px; background: var(--gold); color: #000; border: none; border-radius: 9px; font-weight: 700; font-size: 0.85rem; cursor: pointer; font-family: 'Poppins', sans-serif; transition: opacity 0.15s; }
+.dt-confirm:hover { opacity: 0.88; }
+.btn-whatsapp {
+  width: 100%; padding: 14px;
+  background: linear-gradient(45deg, #25d366, #128c7e);
+  border: none; border-radius: 12px;
+  color: white; font-weight: 700; font-size: 1rem;
+  cursor: pointer; transition: 0.25s;
+  display: flex; justify-content: center; align-items: center; gap: 10px;
+  font-family: inherit; margin-top: 4px;
+}
+.btn-whatsapp:hover { transform: translateY(-2px); box-shadow: 0 10px 24px rgba(37,211,102,0.3); }
+.section-title { text-align: center; font-family: 'Montserrat', sans-serif; color: var(--gold); font-size: 1.3rem; margin: 10px 0 18px; }
+body.tamil-mode .section-title { font-family: 'Hind Madurai', sans-serif; }
+.fleet { display: flex; justify-content: center; gap: 18px; padding: 10px 5% 38px; flex-wrap: wrap; }
+.vehicle-card { background: var(--glass); padding: 26px 22px; border-radius: 18px; border: 1px solid var(--glass-border); width: 250px; text-align: center; transition: 0.25s; }
+.vehicle-card:hover { border-color: var(--gold); transform: translateY(-4px); }
+.vehicle-card i { font-size: 2rem; color: var(--gold); margin-bottom: 12px; display: block; }
+.vehicle-card h4 { margin: 0 0 7px; font-family: 'Montserrat', sans-serif; font-size: 0.95rem; }
+.vehicle-card p { font-size: 0.78rem; opacity: 0.65; line-height: 1.6; }
+.destinations { padding: 28px 5%; text-align: center; border-top: 1px solid var(--glass-border); }
+.dest-tags { display: flex; flex-wrap: wrap; justify-content: center; gap: 9px; margin-top: 14px; }
+.dest-tag { padding: 6px 15px; border: 1px solid var(--glass-border); border-radius: 50px; font-size: 0.8rem; opacity: 0.75; transition: 0.2s; cursor: pointer; }
+.dest-tag:hover { border-color: var(--gold); opacity: 1; color: var(--gold); }
+footer { text-align: center; padding: 22px 5%; border-top: 1px solid var(--glass-border); font-size: 0.78rem; opacity: 0.55; }
+footer a { color: var(--gold); }
+@media (max-width: 480px) {
+  .glass-booking-box { padding: 24px 18px; margin: 20px 12px; }
+  .dt-panel { width: 260px; }
+}
+</style>
 </head>
 <body id="bodyRoot">
+<nav>
+  <div class="nav-brand">
+    <img src="https://vrmstravels.com/logo.png" alt="VRMS Tour Travels Logo" class="nav-logo">
+    <div class="logo-text">VRMS Tour Travels</div>
+  </div>
+  <div class="nav-right">
+    <div class="lang-toggle">
+      <button class="lang-btn active" id="btnEn" onclick="setLang('en')">EN</button>
+      <button class="lang-btn" id="btnTa" onclick="setLang('ta')">தமிழ்</button>
+    </div>
+    <a href="tel:+919840541625" class="nav-phone"><i class="fas fa-phone"></i> 9840541625</a>
+  </div>
+</nav>
 
-    <nav>
-        <div class="nav-brand">
-            <img src="https://vrmstravels.com/logo.png" alt="VRMS Tour Travels Logo" class="nav-logo">
-            <div class="logo-text">
-                VRMS Tour Travels
-                <!--<span data-en="Chennai Taxi Service" data-ta="சென்னை டாக்சி சேவை">Chennai Taxi Service</span>-->
-            </div>
-        </div>
+<section class="hero">
+  <img src="https://vrmstravels.com/logo.png" alt="VRMS Tour Travels" class="hero-logo">
+  <h1 data-en="Premium Taxi Service from Chennai" data-ta="சென்னையிலிருந்து சிறந்த டாக்சி சேவை">Premium Taxi Service from Chennai</h1>
+  <p class="hero-sub" data-en="To Tamil Nadu Destinations &amp; Bangalore | Available 24/7" data-ta="தமிழ்நாடு மற்றும் பெங்களூரு | 24/7 கிடைக்கும்">To Tamil Nadu Destinations &amp; Bangalore | Available 24/7</p>
 
-        <div class="nav-right">
-            <div class="lang-toggle">
-                <button class="lang-btn active" id="btnEn" onclick="setLang('en')">EN</button>
-                <button class="lang-btn" id="btnTa" onclick="setLang('ta')">தமிழ்</button>
-            </div>
-            <a href="tel:+919840541625" class="nav-phone">
-                <i class="fas fa-phone"></i> 9840541625
-            </a>
-        </div>
-    </nav>
+  <div class="glass-booking-box">
+    <h3 data-en="Quick Booking" data-ta="விரைவு பதிவு">Quick Booking</h3>
 
-    <section class="hero">
-        <img src="https://vrmstravels.com/logo.png" alt="VRMS Tour Travels" class="hero-logo">
-        <h1 data-en="Premium Taxi Service from Chennai" data-ta="சென்னையிலிருந்து சிறந்த டாக்சி சேவை">Premium Taxi Service from Chennai</h1>
-        <p class="hero-sub" data-en="To Tamil Nadu Destinations &amp; Bangalore | Available 24/7" data-ta="தமிழ்நாடு மற்றும் பெங்களூரு | 24/7 கிடைக்கும்">To Tamil Nadu Destinations &amp; Bangalore | Available 24/7</p>
-
-        <div class="glass-booking-box">
-            <h3 data-en="Quick Booking" data-ta="விரைவு பதிவு">Quick Booking</h3>
-
-            <div class="input-group">
-                <label data-en="Full Name" data-ta="முழு பெயர்">Full Name</label>
-                <input type="text" id="userName"
-                    data-en-placeholder="Enter your name"
-                    data-ta-placeholder="உங்கள் பெயரை உள்ளிடுக"
-                    placeholder="Enter your name" autocomplete="name">
-            </div>
-
-            <div class="input-group">
-                <label data-en="Mobile Number" data-ta="கைபேசி எண்">Mobile Number</label>
-                <input type="tel" id="userPhone"
-                    data-en-placeholder="Enter mobile number"
-                    data-ta-placeholder="கைபேசி எண்ணை உள்ளிடுக"
-                    placeholder="Enter mobile number" autocomplete="tel">
-            </div>
-
-            <div class="input-group">
-                <label data-en="Destination" data-ta="செல்லும் இடம்">Destination</label>
-                <input type="text" id="destination"
-                    data-en-placeholder="e.g. Bangalore, Madurai, Coimbatore"
-                    data-ta-placeholder="எ.கா. பெங்களூரு, மதுரை, கோயம்புத்தூர்"
-                    placeholder="e.g. Bangalore, Madurai, Coimbatore">
-            </div>
-
-            <div class="input-group">
-                <label data-en="Select Vehicle" data-ta="வாகனம் தேர்வு செய்க">Select Vehicle</label>
-                <select id="vehicleType">
-                    <option
-                        data-en="Executive Sedan – Swift Dzire / Etios (4+1)"
-                        data-ta="எக்ஸிகியூட்டிவ் செடான் – ஸ்விஃப்ட் டிசைர் / எட்டியோஸ் (4+1)">
-                        Executive Sedan – Swift Dzire / Etios (4+1)
-                    </option>
-                    <option
-                        data-en="Premium SUV – Innova Crysta / XUV (6+1)"
-                        data-ta="பிரீமியம் SUV – இன்னோவா கிரிஸ்டா / XUV (6+1)">
-                        Premium SUV – Innova Crysta / XUV (6+1)
-                    </option>
-                </select>
-            </div>
-
-            <button class="btn-whatsapp" onclick="sendToWhatsApp()">
-                <i class="fab fa-whatsapp"></i>
-                <span data-en="Book via WhatsApp" data-ta="வாட்ஸ்அப்பில் பதிவு செய்க">Book via WhatsApp</span>
-            </button>
-        </div>
-    </section>
-
-    <h2 class="section-title" data-en="Our Fleet" data-ta="எங்கள் வாகனங்கள்">Our Fleet</h2>
-    <div class="fleet">
-        <div class="vehicle-card">
-            <i class="fas fa-car"></i>
-            <h4 data-en="Executive Sedan" data-ta="எக்ஸிகியூட்டிவ் செடான்">Executive Sedan</h4>
-            <p data-en="Swift Dzire / Etios<br>Perfect for small families &amp; solo trips"
-               data-ta="ஸ்விஃப்ட் டிசைர் / எட்டியோஸ்<br>சிறிய குடும்பங்களுக்கு ஏற்றது">
-               Swift Dzire / Etios<br>Perfect for small families &amp; solo trips
-            </p>
-        </div>
-        <div class="vehicle-card">
-            <i class="fas fa-truck-pickup"></i>
-            <h4 data-en="Premium SUV" data-ta="பிரீமியம் SUV">Premium SUV</h4>
-            <p data-en="Innova Crysta / XUV<br>Comfort &amp; luxury for long trips"
-               data-ta="இன்னோவா கிரிஸ்டா / XUV<br>நீண்ட பயணத்திற்கு ஆடம்பரம்">
-               Innova Crysta / XUV<br>Comfort &amp; luxury for long trips
-            </p>
-        </div>
+    <div class="input-group">
+      <label data-en="Full Name" data-ta="முழு பெயர்">Full Name</label>
+      <input type="text" id="userName" data-en-placeholder="Enter your name" data-ta-placeholder="உங்கள் பெயரை உள்ளிடுக" placeholder="Enter your name" autocomplete="name">
+    </div>
+    <div class="input-group">
+      <label data-en="Mobile Number" data-ta="கைபேசி எண்">Mobile Number</label>
+      <input type="tel" id="userPhone" data-en-placeholder="Enter mobile number" data-ta-placeholder="கைபேசி எண்ணை உள்ளிடுக" placeholder="Enter mobile number" autocomplete="tel">
     </div>
 
-    <section class="destinations">
-        <h2 class="section-title" style="margin:0 0 6px;"
-            data-en="Popular Routes from Chennai"
-            data-ta="சென்னையிலிருந்து பிரபலமான பாதைகள்">Popular Routes from Chennai</h2>
-        <p style="opacity:0.6; font-size:0.85rem; margin:0 0 12px;"
-           data-en="We cover all major Tamil Nadu destinations and beyond"
-           data-ta="அனைத்து முக்கிய தமிழ்நாடு இடங்களுக்கும் சேவை">We cover all major Tamil Nadu destinations and beyond</p>
-        <div class="dest-tags">
-            <span class="dest-tag" data-en="Chennai → Bangalore" data-ta="சென்னை → பெங்களூரு">Chennai → Bangalore</span>
-            <span class="dest-tag" data-en="Chennai → Coimbatore" data-ta="சென்னை → கோயம்புத்தூர்">Chennai → Coimbatore</span>
-            <span class="dest-tag" data-en="Chennai → Madurai" data-ta="சென்னை → மதுரை">Chennai → Madurai</span>
-            <span class="dest-tag" data-en="Chennai → Trichy" data-ta="சென்னை → திருச்சி">Chennai → Trichy</span>
-            <span class="dest-tag" data-en="Chennai → Salem" data-ta="சென்னை → சேலம்">Chennai → Salem</span>
-            <span class="dest-tag" data-en="Chennai → Vellore" data-ta="சென்னை → வேலூர்">Chennai → Vellore</span>
-            <span class="dest-tag" data-en="Chennai → Pondicherry" data-ta="சென்னை → புதுச்சேரி">Chennai → Pondicherry</span>
-            <span class="dest-tag" data-en="Chennai → Tirupati" data-ta="சென்னை → திருப்பதி">Chennai → Tirupati</span>
-            <span class="dest-tag" data-en="Chennai → Ooty" data-ta="சென்னை → உதகமண்டலம்">Chennai → Ooty</span>
-            <span class="dest-tag" data-en="Chennai → Kodaikanal" data-ta="சென்னை → கொடைக்கானல்">Chennai → Kodaikanal</span>
-            <span class="dest-tag" data-en="Airport Pickup" data-ta="விமான நிலைய எடுப்பு">Airport Pickup</span>
-            <span class="dest-tag" data-en="Airport Drop" data-ta="விமான நிலைய விடுப்பு">Airport Drop</span>
+    <div class="input-group">
+      <label data-en="From" data-ta="புறப்படும் இடம்">From</label>
+      <div class="autosuggest-wrapper">
+        <input type="text" id="fromLocation" data-en-placeholder="e.g. Chennai, Tambaram, T Nagar" data-ta-placeholder="எ.கா. சென்னை, தாம்பரம், டி நகர்" placeholder="e.g. Chennai, Tambaram, T Nagar" autocomplete="off" oninput="handleAutosuggest(this,'fromDropdown','from')" onkeydown="handleKeydown(event,'fromDropdown')">
+        <div class="suggestions-dropdown" id="fromDropdown" role="listbox"></div>
+        <div class="mappls-attr">Powered by <a href="https://about.mappls.com" target="_blank">Mappls</a></div>
+      </div>
+    </div>
+
+    <div class="input-group">
+      <label data-en="To" data-ta="செல்லும் இடம்">To</label>
+      <div class="autosuggest-wrapper">
+        <input type="text" id="destination" data-en-placeholder="e.g. Bangalore, Madurai, Coimbatore" data-ta-placeholder="எ.கா. பெங்களூரு, மதுரை, கோயம்புத்தூர்" placeholder="e.g. Bangalore, Madurai, Coimbatore" autocomplete="off" oninput="handleAutosuggest(this,'destDropdown','dest')" onkeydown="handleKeydown(event,'destDropdown')">
+        <div class="suggestions-dropdown" id="destDropdown" role="listbox"></div>
+        <div class="mappls-attr">Powered by <a href="https://about.mappls.com" target="_blank">Mappls</a></div>
+      </div>
+    </div>
+
+    <div class="input-group">
+      <label data-en="Start Date &amp; Time" data-ta="புறப்படும் தேதி &amp; நேரம்">Start Date &amp; Time</label>
+      <div class="dt-picker" id="startDatePicker">
+        <div class="dt-trigger" id="startDateTrigger" onclick="togglePanel('startDatePicker')">
+          <i class="fas fa-calendar-alt dt-icon"></i>
+          <span class="dt-text placeholder" id="startDateDisplay">Pick date &amp; time</span>
         </div>
-    </section>
+        <div class="dt-panel" id="startDatePanel">
+          <div class="cal-header">
+            <button class="cal-nav" onclick="changeMonth('startDatePicker',-1)">&#8249;</button>
+            <span class="cal-month-year" id="startDateMonthYear"></span>
+            <button class="cal-nav" onclick="changeMonth('startDatePicker',1)">&#8250;</button>
+          </div>
+          <div class="cal-days-header"><div class="cal-day-name">Su</div><div class="cal-day-name">Mo</div><div class="cal-day-name">Tu</div><div class="cal-day-name">We</div><div class="cal-day-name">Th</div><div class="cal-day-name">Fr</div><div class="cal-day-name">Sa</div></div>
+          <div class="cal-grid" id="startDateGrid"></div>
+          <div class="time-section">
+            <div class="time-label">SELECT TIME</div>
+            <div class="time-inputs">
+              <div class="time-spinner">
+                <button class="time-spin-btn" onclick="spinTime('start','h',1)">▲</button>
+                <input class="time-val" id="startHr" type="number" min="1" max="12" value="10" oninput="clampTime('start','h')">
+                <button class="time-spin-btn" onclick="spinTime('start','h',-1)">▼</button>
+              </div>
+              <div class="time-colon">:</div>
+              <div class="time-spinner">
+                <button class="time-spin-btn" onclick="spinTime('start','m',1)">▲</button>
+                <input class="time-val" id="startMin" type="number" min="0" max="59" value="00" oninput="clampTime('start','m')">
+                <button class="time-spin-btn" onclick="spinTime('start','m',-1)">▼</button>
+              </div>
+              <div class="ampm-toggle">
+                <button class="ampm-btn active" id="startAM" onclick="setAmPm('start','AM')">AM</button>
+                <button class="ampm-btn" id="startPM" onclick="setAmPm('start','PM')">PM</button>
+              </div>
+            </div>
+          </div>
+          <button class="dt-confirm" onclick="confirmDT('startDatePicker','start')">Confirm</button>
+        </div>
+      </div>
+    </div>
 
-    <footer>
-        <p data-en="© 2025 VRMS Tour Travels, Chennai, Tamil Nadu | Taxi Booking: <a href='tel:+919840541625'>9840541625</a>"
-           data-ta="© 2025 VRMS டூர் டிராவல்ஸ், சென்னை, தமிழ்நாடு | டாக்சி பதிவு: <a href='tel:+919840541625'>9840541625</a>">
-           © 2025 VRMS Tour Travels, Chennai, Tamil Nadu | Taxi Booking: <a href="tel:+919840541625">9840541625</a>
-        </p>
-        <p style="margin:4px 0 0;"
-           data-en="Outstation Taxi Service · Airport Transfers · Corporate Travel"
-           data-ta="வெளியூர் டாக்சி சேவை · விமான நிலைய பயணம் · கார்ப்பரேட் பயணம்">
-           Outstation Taxi Service · Airport Transfers · Corporate Travel
-        </p>
-    </footer>
+    <div class="input-group">
+      <label data-en="Return Date &amp; Time (Optional)" data-ta="திரும்பும் தேதி &amp; நேரம் (விருப்பத்தேர்வு)">Return Date &amp; Time (Optional)</label>
+      <div class="dt-picker" id="endDatePicker">
+        <div class="dt-trigger" id="endDateTrigger" onclick="togglePanel('endDatePicker')">
+          <i class="fas fa-calendar-alt dt-icon"></i>
+          <span class="dt-text placeholder" id="endDateDisplay">Pick date &amp; time</span>
+        </div>
+        <div class="dt-panel" id="endDatePanel">
+          <div class="cal-header">
+            <button class="cal-nav" onclick="changeMonth('endDatePicker',-1)">&#8249;</button>
+            <span class="cal-month-year" id="endDateMonthYear"></span>
+            <button class="cal-nav" onclick="changeMonth('endDatePicker',1)">&#8250;</button>
+          </div>
+          <div class="cal-days-header"><div class="cal-day-name">Su</div><div class="cal-day-name">Mo</div><div class="cal-day-name">Tu</div><div class="cal-day-name">We</div><div class="cal-day-name">Th</div><div class="cal-day-name">Fr</div><div class="cal-day-name">Sa</div></div>
+          <div class="cal-grid" id="endDateGrid"></div>
+          <div class="time-section">
+            <div class="time-label">SELECT TIME</div>
+            <div class="time-inputs">
+              <div class="time-spinner">
+                <button class="time-spin-btn" onclick="spinTime('end','h',1)">▲</button>
+                <input class="time-val" id="endHr" type="number" min="1" max="12" value="06" oninput="clampTime('end','h')">
+                <button class="time-spin-btn" onclick="spinTime('end','h',-1)">▼</button>
+              </div>
+              <div class="time-colon">:</div>
+              <div class="time-spinner">
+                <button class="time-spin-btn" onclick="spinTime('end','m',1)">▲</button>
+                <input class="time-val" id="endMin" type="number" min="0" max="59" value="00" oninput="clampTime('end','m')">
+                <button class="time-spin-btn" onclick="spinTime('end','m',-1)">▼</button>
+              </div>
+              <div class="ampm-toggle">
+                <button class="ampm-btn active" id="endAM" onclick="setAmPm('end','AM')">AM</button>
+                <button class="ampm-btn" id="endPM" onclick="setAmPm('end','PM')">PM</button>
+              </div>
+            </div>
+          </div>
+          <button class="dt-confirm" onclick="confirmDT('endDatePicker','end')">Confirm</button>
+        </div>
+      </div>
+    </div>
 
-    <script>
-        let currentLang = 'en';
+    <div class="input-group">
+      <label data-en="Select Vehicle" data-ta="வாகனம் தேர்வு செய்க">Select Vehicle</label>
+      <select id="vehicleType">
+        <option data-en="Executive Sedan – Swift Dzire / Etios (4+1)" data-ta="எக்ஸிகியூட்டிவ் செடான் – ஸ்விஃப்ட் டிசைர் / எட்டியோஸ் (4+1)">Executive Sedan – Swift Dzire / Etios (4+1)</option>
+        <option data-en="Premium SUV – Innova Crysta / XUV (6+1)" data-ta="பிரீமியம் SUV – இன்னோவா கிரிஸ்டா / XUV (6+1)">Premium SUV – Innova Crysta / XUV (6+1)</option>
+      </select>
+    </div>
 
-        function setLang(lang) {
-            currentLang = lang;
+    <button class="btn-whatsapp" onclick="sendToWhatsApp()">
+      <i class="fab fa-whatsapp"></i>
+      <span data-en="Book via WhatsApp" data-ta="வாட்ஸ்அப்பில் பதிவு செய்க">Book via WhatsApp</span>
+    </button>
+  </div>
+</section>
 
-            document.getElementById('bodyRoot').classList.toggle('tamil-mode', lang === 'ta');
-            document.getElementById('htmlRoot').setAttribute('lang', lang === 'ta' ? 'ta' : 'en');
+<h2 class="section-title" data-en="Our Fleet" data-ta="எங்கள் வாகனங்கள்">Our Fleet</h2>
+<div class="fleet">
+  <div class="vehicle-card">
+    <i class="fas fa-car"></i>
+    <h4 data-en="Executive Sedan" data-ta="எக்ஸிகியூட்டிவ் செடான்">Executive Sedan</h4>
+    <p data-en="Swift Dzire / Etios<br>Perfect for small families &amp; solo trips" data-ta="ஸ்விஃப்ட் டிசைர் / எட்டியோஸ்<br>சிறிய குடும்பங்களுக்கு ஏற்றது">Swift Dzire / Etios<br>Perfect for small families &amp; solo trips</p>
+  </div>
+  <div class="vehicle-card">
+    <i class="fas fa-truck-pickup"></i>
+    <h4 data-en="Premium SUV" data-ta="பிரீமியம் SUV">Premium SUV</h4>
+    <p data-en="Innova Crysta / XUV<br>Comfort &amp; luxury for long trips" data-ta="இன்னோவா கிரிஸ்டா / XUV<br>நீண்ட பயணத்திற்கு ஆடம்பரம்">Innova Crysta / XUV<br>Comfort &amp; luxury for long trips</p>
+  </div>
+</div>
 
-            document.getElementById('btnEn').classList.toggle('active', lang === 'en');
-            document.getElementById('btnTa').classList.toggle('active', lang === 'ta');
+<section class="destinations">
+  <h2 class="section-title" style="margin:0 0 6px;" data-en="Popular Routes from Chennai" data-ta="சென்னையிலிருந்து பிரபலமான பாதைகள்">Popular Routes from Chennai</h2>
+  <p style="opacity:0.55; font-size:0.82rem; margin:0 0 10px;" data-en="We cover all major Tamil Nadu destinations and beyond" data-ta="அனைத்து முக்கிய தமிழ்நாடு இடங்களுக்கும் சேவை">We cover all major Tamil Nadu destinations and beyond</p>
+  <div class="dest-tags">
+    <span class="dest-tag" onclick="quickFill('dest','Bangalore')">Chennai → Bangalore</span>
+    <span class="dest-tag" onclick="quickFill('dest','Coimbatore')">Chennai → Coimbatore</span>
+    <span class="dest-tag" onclick="quickFill('dest','Madurai')">Chennai → Madurai</span>
+    <span class="dest-tag" onclick="quickFill('dest','Trichy')">Chennai → Trichy</span>
+    <span class="dest-tag" onclick="quickFill('dest','Salem')">Chennai → Salem</span>
+    <span class="dest-tag" onclick="quickFill('dest','Vellore')">Chennai → Vellore</span>
+    <span class="dest-tag" onclick="quickFill('dest','Pondicherry')">Chennai → Pondicherry</span>
+    <span class="dest-tag" onclick="quickFill('dest','Tirupati')">Chennai → Tirupati</span>
+    <span class="dest-tag" onclick="quickFill('dest','Ooty')">Chennai → Ooty</span>
+    <span class="dest-tag" onclick="quickFill('dest','Kodaikanal')">Chennai → Kodaikanal</span>
+    <span class="dest-tag" onclick="quickFill('from','Chennai Airport')">Airport Pickup</span>
+    <span class="dest-tag" onclick="quickFill('dest','Chennai Airport')">Airport Drop</span>
+  </div>
+</section>
 
-            // Translate all tagged elements
-            document.querySelectorAll('[data-en]').forEach(el => {
-                const text = el.getAttribute('data-' + lang);
-                if (text) el.innerHTML = text;
-            });
+<footer>
+  <p data-en="© 2025 VRMS Tour Travels, Chennai, Tamil Nadu | Taxi Booking: <a href='tel:+919840541625'>9840541625</a>" data-ta="© 2025 VRMS டூர் டிராவல்ஸ், சென்னை, தமிழ்நாடு | டாக்சி பதிவு: <a href='tel:+919840541625'>9840541625</a>">© 2025 VRMS Tour Travels, Chennai, Tamil Nadu | Taxi Booking: <a href="tel:+919840541625">9840541625</a></p>
+  <p style="margin:4px 0 0;" data-en="Outstation Taxi Service · Airport Transfers · Corporate Travel" data-ta="வெளியூர் டாக்சி சேவை · விமான நிலைய பயணம் · கார்ப்பரேட் பயணம்">Outstation Taxi Service · Airport Transfers · Corporate Travel</p>
+</footer>
 
-            // Translate input placeholders
-            document.querySelectorAll('input[data-en-placeholder]').forEach(el => {
-                const ph = el.getAttribute('data-' + lang + '-placeholder');
-                if (ph) el.placeholder = ph;
-            });
+<script>
+// ══════════════════════════════════════════════════
+//  CLOUDFLARE WORKER — proxies Mappls + encrypts response
+// ══════════════════════════════════════════════════
+const WORKER = 'https://vrms-mappls-proxy.booking-66d.workers.dev';
 
-            // Translate select options
-            document.querySelectorAll('select option[data-en]').forEach(el => {
-                const txt = el.getAttribute('data-' + lang);
-                if (txt) el.textContent = txt;
-            });
-        }
+// AES-GCM key — must match worker.js AES_KEY_HEX
+// Stored as byte array so it doesn't appear as plain text
+const _aesKey = [
+  0x56,0x52,0x4D,0x53,0x74,0x72,0x61,0x76,
+  0x65,0x6C,0x73,0x41,0x45,0x53,0x32,0x35,
+  0x4B,0x65,0x79,0x32,0x30,0x56,0x73,0x00
+];
 
-        function sendToWhatsApp() {
-            const name = document.getElementById('userName').value.trim();
-            const phone = document.getElementById('userPhone').value.trim();
-            const vehicle = document.getElementById('vehicleType').value;
-            const destination = document.getElementById('destination').value.trim();
+async function getCryptoKey() {
+  return crypto.subtle.importKey(
+    'raw', new Uint8Array(_aesKey),
+    { name: 'AES-GCM' }, false, ['decrypt']
+  );
+}
 
-            if (!name || !phone) {
-                alert(currentLang === 'ta'
-                    ? 'உங்கள் பெயர் மற்றும் கைபேசி எண்ணை உள்ளிடுக.'
-                    : 'Please fill in your name and mobile number.');
-                return;
-            }
+async function decryptResponse(urlSafeB64) {
+  // Restore standard base64 from URL-safe base64
+  const b64 = urlSafeB64
+    .replace(/-/g, '+')
+    .replace(/_/g, '/')
+    + '=='.slice(0, (4 - urlSafeB64.length % 4) % 4);
 
-            const dest = destination || (currentLang === 'ta' ? 'குறிப்பிடவில்லை' : 'Not specified');
+  const combined   = Uint8Array.from(atob(b64), c => c.charCodeAt(0));
+  const iv         = combined.slice(0, 12);
+  const ciphertext = combined.slice(12);
+  const key        = await getCryptoKey();
+  const plainBuf   = await crypto.subtle.decrypt({ name: 'AES-GCM', iv }, key, ciphertext);
+  return JSON.parse(new TextDecoder().decode(plainBuf));
+}
 
-            const message = currentLang === 'ta'
-                ? `வணக்கம் VRMS டூர் டிராவல்ஸ்!%0A%0A*புதிய பதிவு*%0A%0A👤 பெயர்: ${encodeURIComponent(name)}%0A📱 கைபேசி: ${encodeURIComponent(phone)}%0A📍 இடம்: ${encodeURIComponent(dest)}%0A🚗 வாகனம்: ${encodeURIComponent(vehicle)}%0A%0Aசிறந்த கட்டணம் தெரிவிக்கவும். நன்றி!`
-                : `Hello VRMS Tour Travels!%0A%0A*New Booking Inquiry*%0A%0A👤 Name: ${encodeURIComponent(name)}%0A📱 Mobile: ${encodeURIComponent(phone)}%0A📍 Destination: ${encodeURIComponent(dest)}%0A🚗 Vehicle: ${encodeURIComponent(vehicle)}%0A%0AKindly provide the best quote. Thank you!`;
+// ── GPS for biased results ────────────────────────
+let userLat = null, userLng = null;
+if (navigator.geolocation) {
+  navigator.geolocation.getCurrentPosition(
+    p => { userLat = p.coords.latitude; userLng = p.coords.longitude; },
+    () => {}
+  );
+}
 
-            window.open(`https://wa.me/919840541625?text=${message}`, '_blank');
-        }
-    </script>
+// ── Selected place store ──────────────────────────
+const selectedPlace = { from: null, dest: null };
 
+// ── Debounce ──────────────────────────────────────
+function debounce(fn, ms) {
+  let t;
+  return (...args) => { clearTimeout(t); t = setTimeout(() => fn(...args), ms); };
+}
+
+// ── Autosuggest — via Worker with encrypted response ──
+const doFetch = debounce(async (query, dropId, field) => {
+  const dd = document.getElementById(dropId);
+  if (!query || query.length < 2) { closeDD(dropId); return; }
+
+  dd.innerHTML = '<div class="suggestion-loading"><i class="fas fa-circle-notch fa-spin"></i>&nbsp; Searching…</div>';
+  dd.classList.add('open');
+
+  try {
+    const params = new URLSearchParams({ query });
+    if (userLat && userLng) params.set('location', `${userLat},${userLng}`);
+
+    const res    = await fetch(`${WORKER}/autosuggest?${params}`);
+    const cipher = await res.text();              // URL-safe base64 ciphertext
+    const data   = await decryptResponse(cipher); // AES-GCM decrypt
+    const places = data.suggestedLocations || [];
+
+    if (!places.length) {
+      dd.innerHTML = '<div class="suggestion-empty">No results found.</div>';
+      return;
+    }
+
+    dd.innerHTML = places.map(p => `
+      <div class="suggestion-item" role="option"
+           data-field="${field}"
+           data-name="${esc(p.placeName)}"
+           data-addr="${esc(p.placeAddress || '')}"
+           data-eloc="${esc(p.eLoc || '')}"
+           onclick="pickPlace(this)"
+           onmouseenter="setActive(this)">
+        <span class="suggestion-icon"><i class="fas fa-map-marker-alt"></i></span>
+        <span class="suggestion-text">
+          <span class="suggestion-name">${safe(p.placeName)}</span>
+          <span class="suggestion-addr">${safe(p.placeAddress || '')}</span>
+        </span>
+      </div>`).join('');
+
+  } catch(e) {
+    dd.innerHTML = '<div class="suggestion-empty">Could not load results. Try again.</div>';
+    console.error('Decrypt error:', e);
+  }
+}, 350);
+
+function handleAutosuggest(input, dropId, field) {
+  selectedPlace[field] = null;
+  doFetch(input.value.trim(), dropId, field);
+}
+
+function pickPlace(el) {
+  const f = el.dataset.field;
+  document.getElementById(f === 'from' ? 'fromLocation' : 'destination').value = el.dataset.name;
+  selectedPlace[f] = { name: el.dataset.name, addr: el.dataset.addr, eloc: el.dataset.eloc };
+  closeDD(el.closest('.suggestions-dropdown').id);
+}
+
+function handleKeydown(e, dropId) {
+  const dd = document.getElementById(dropId);
+  const items = [...dd.querySelectorAll('.suggestion-item')];
+  let active = dd.querySelector('.suggestion-item.active');
+  if (e.key === 'ArrowDown') {
+    e.preventDefault();
+    const nxt = active ? (items[items.indexOf(active)+1]||items[0]) : items[0];
+    if (nxt) { active&&active.classList.remove('active'); nxt.classList.add('active'); }
+  } else if (e.key === 'ArrowUp') {
+    e.preventDefault();
+    const prv = active ? (items[items.indexOf(active)-1]||items[items.length-1]) : items[items.length-1];
+    if (prv) { active&&active.classList.remove('active'); prv.classList.add('active'); }
+  } else if (e.key === 'Enter' && active) { e.preventDefault(); pickPlace(active); }
+  else if (e.key === 'Escape') closeDD(dropId);
+}
+
+function setActive(el) {
+  el.closest('.suggestions-dropdown').querySelectorAll('.suggestion-item').forEach(i => i.classList.remove('active'));
+  el.classList.add('active');
+}
+function closeDD(id) { const d = document.getElementById(id); d.classList.remove('open'); d.innerHTML = ''; }
+function esc(s)  { return String(s).replace(/"/g,'&quot;'); }
+function safe(s) { return String(s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;'); }
+
+function quickFill(field, name) {
+  document.getElementById(field === 'from' ? 'fromLocation' : 'destination').value = name;
+  selectedPlace[field] = { name, addr: '', eloc: '' };
+  closeDD(field === 'from' ? 'fromDropdown' : 'destDropdown');
+}
+
+// ── Custom Date-Time Picker ───────────────────────
+const MONTHS = ['January','February','March','April','May','June','July','August','September','October','November','December'];
+const calState = {
+  startDatePicker: { year: new Date().getFullYear(), month: new Date().getMonth(), selected: null },
+  endDatePicker:   { year: new Date().getFullYear(), month: new Date().getMonth(), selected: null }
+};
+const dtValues = { start: null, end: null };
+
+function renderCalendar(id) {
+  const s = calState[id];
+  const today = new Date(); today.setHours(0,0,0,0);
+  document.getElementById(id.replace('Picker','MonthYear')).textContent = `${MONTHS[s.month]} ${s.year}`;
+  const grid = document.getElementById(id.replace('Picker','Grid'));
+  const firstDay = new Date(s.year, s.month, 1).getDay();
+  const days = new Date(s.year, s.month + 1, 0).getDate();
+  let html = '';
+  for (let i = 0; i < firstDay; i++) html += '<div class="cal-cell empty"></div>';
+  for (let d = 1; d <= days; d++) {
+    const date = new Date(s.year, s.month, d);
+    const cls = ['cal-cell', date < today ? 'disabled' : '', date.toDateString() === today.toDateString() ? 'today' : '', s.selected && date.toDateString() === s.selected.toDateString() ? 'selected' : ''].join(' ').trim();
+    html += `<div class="${cls}" onclick="selectDay('${id}',${s.year},${s.month},${d})">${d}</div>`;
+  }
+  grid.innerHTML = html;
+}
+
+function changeMonth(id, dir) {
+  const s = calState[id];
+  s.month += dir;
+  if (s.month > 11) { s.month = 0; s.year++; }
+  if (s.month < 0)  { s.month = 11; s.year--; }
+  renderCalendar(id);
+}
+
+function selectDay(id, y, m, d) {
+  const date = new Date(y, m, d);
+  const today = new Date(); today.setHours(0,0,0,0);
+  if (date < today) return;
+  calState[id].selected = date;
+  renderCalendar(id);
+}
+
+function togglePanel(id) {
+  const panel = document.getElementById(id.replace('Picker','Panel'));
+  const trigger = document.getElementById(id.replace('Picker','Trigger'));
+  const isOpen = panel.classList.contains('open');
+  document.querySelectorAll('.dt-panel').forEach(p => p.classList.remove('open'));
+  document.querySelectorAll('.dt-trigger').forEach(t => t.classList.remove('open'));
+  if (!isOpen) { panel.classList.add('open'); trigger.classList.add('open'); renderCalendar(id); }
+}
+
+function spinTime(p, part, dir) {
+  const el = document.getElementById(p + (part==='h'?'Hr':'Min'));
+  let v = parseInt(el.value) + dir;
+  if (part==='h') { if(v>12) v=1; if(v<1) v=12; }
+  else            { if(v>59) v=0; if(v<0) v=59; }
+  el.value = String(v).padStart(2,'0');
+}
+
+function clampTime(p, part) {
+  const el = document.getElementById(p + (part==='h'?'Hr':'Min'));
+  let v = parseInt(el.value)||0;
+  if (part==='h') { if(v<1) v=1; if(v>12) v=12; }
+  else            { if(v<0) v=0; if(v>59) v=59; }
+  el.value = String(v).padStart(2,'0');
+}
+
+function setAmPm(p, val) {
+  document.getElementById(p+'AM').classList.toggle('active', val==='AM');
+  document.getElementById(p+'PM').classList.toggle('active', val==='PM');
+}
+
+function confirmDT(id, p) {
+  const s = calState[id];
+  if (!s.selected) { alert('Please select a date first.'); return; }
+  const hr   = parseInt(document.getElementById(p+'Hr').value);
+  const min  = document.getElementById(p+'Min').value;
+  const ampm = document.getElementById(p+'AM').classList.contains('active') ? 'AM' : 'PM';
+  const display = `${s.selected.getDate()} ${MONTHS[s.selected.getMonth()].slice(0,3)} ${s.selected.getFullYear()}, ${String(hr).padStart(2,'0')}:${min} ${ampm}`;
+  dtValues[p] = display;
+  const dispEl = document.getElementById(p+'DateDisplay');
+  dispEl.textContent = display;
+  dispEl.classList.remove('placeholder');
+  document.getElementById(id.replace('Picker','Panel')).classList.remove('open');
+  document.getElementById(id.replace('Picker','Trigger')).classList.remove('open');
+}
+
+document.addEventListener('click', e => {
+  if (!e.target.closest('.dt-picker') && !e.target.closest('.autosuggest-wrapper')) {
+    document.querySelectorAll('.dt-panel').forEach(p => p.classList.remove('open'));
+    document.querySelectorAll('.dt-trigger').forEach(t => t.classList.remove('open'));
+    ['fromDropdown','destDropdown'].forEach(closeDD);
+  }
+});
+
+// ── Language ──────────────────────────────────────
+let currentLang = 'en';
+function setLang(lang) {
+  currentLang = lang;
+  document.getElementById('bodyRoot').classList.toggle('tamil-mode', lang==='ta');
+  document.getElementById('htmlRoot').setAttribute('lang', lang==='ta'?'ta':'en');
+  document.getElementById('btnEn').classList.toggle('active', lang==='en');
+  document.getElementById('btnTa').classList.toggle('active', lang==='ta');
+  document.querySelectorAll('[data-en]').forEach(el => { const t=el.getAttribute('data-'+lang); if(t) el.innerHTML=t; });
+  document.querySelectorAll('input[data-en-placeholder]').forEach(el => { const ph=el.getAttribute('data-'+lang+'-placeholder'); if(ph) el.placeholder=ph; });
+  document.querySelectorAll('select option[data-en]').forEach(el => { const t=el.getAttribute('data-'+lang); if(t) el.textContent=t; });
+}
+
+// ── WhatsApp ──────────────────────────────────────
+function sendToWhatsApp() {
+  const name    = document.getElementById('userName').value.trim();
+  const phone   = document.getElementById('userPhone').value.trim();
+  const vehicle = document.getElementById('vehicleType').value;
+  if (!name || !phone) {
+    alert(currentLang==='ta' ? 'உங்கள் பெயர் மற்றும் கைபேசி எண்ணை உள்ளிடுக.' : 'Please fill in your name and mobile number.');
+    return;
+  }
+  const na = currentLang==='ta' ? 'குறிப்பிடவில்லை' : 'Not specified';
+  function placeLines(p, label) {
+    if (!p||!p.name) return `${label}: ${na}`;
+    let s = `${label}: ${encodeURIComponent(p.name)}`;
+    if (p.addr) s += `%0A   📌 ${encodeURIComponent(p.addr)}`;
+    if (p.eloc) s += `%0A   🔗 https://mappls.com/${p.eloc}`;
+    return s;
+  }
+  const isTa      = currentLang==='ta';
+  const fromBlock = placeLines(selectedPlace.from, isTa?'🚏 புறப்படும் இடம்':'🚏 From');
+  const destBlock = placeLines(selectedPlace.dest, isTa?'📍 செல்லும் இடம்':'📍 To');
+  const startStr  = dtValues.start ? encodeURIComponent(dtValues.start) : na;
+  const endStr    = dtValues.end   ? encodeURIComponent(dtValues.end)   : na;
+  const msg = isTa
+    ? `வணக்கம் VRMS டூர் டிராவல்ஸ்!%0A%0A*புதிய பதிவு*%0A%0A👤 பெயர்: ${encodeURIComponent(name)}%0A📱 கைபேசி: ${encodeURIComponent(phone)}%0A%0A${fromBlock}%0A${destBlock}%0A%0A📅 புறப்படும் நேரம்: ${startStr}%0A🏁 திரும்பும் நேரம்: ${endStr}%0A%0A🚗 வாகனம்: ${encodeURIComponent(vehicle)}%0A%0Aசிறந்த கட்டணம் தெரிவிக்கவும். நன்றி!`
+    : `Hello VRMS Tour Travels!%0A%0A*New Booking Inquiry*%0A%0A👤 Name: ${encodeURIComponent(name)}%0A📱 Mobile: ${encodeURIComponent(phone)}%0A%0A${fromBlock}%0A${destBlock}%0A%0A📅 Start: ${startStr}%0A🏁 Return: ${endStr}%0A%0A🚗 Vehicle: ${encodeURIComponent(vehicle)}%0A%0AKindly provide the best quote. Thank you!`;
+  window.open(`https://wa.me/919840541625?text=${msg}`, '_blank');
+}
+</script>
 </body>
 </html>
