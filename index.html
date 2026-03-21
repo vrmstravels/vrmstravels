@@ -63,6 +63,7 @@ body.tamil-mode h1 { font-family: 'Hind Madurai', sans-serif; font-weight: 700; 
   background: var(--glass); backdrop-filter: blur(24px);
   border: 1px solid var(--glass-border); border-radius: 24px;
   box-shadow: 0 20px 60px rgba(0,0,0,0.5);
+  overflow: visible;
 }
 .glass-booking-box h3 { color: var(--gold); font-family: 'Montserrat', sans-serif; font-size: 1.15rem; margin-bottom: 22px; }
 body.tamil-mode .glass-booking-box h3 { font-family: 'Hind Madurai', sans-serif; }
@@ -101,6 +102,18 @@ select option { background: #1a3018; color: white; }
 .suggestion-loading, .suggestion-empty { padding: 13px 15px; font-size: 0.82rem; opacity: 0.55; text-align: center; }
 .mappls-attr { font-size: 0.65rem; opacity: 0.35; text-align: right; margin-top: 3px; }
 .mappls-attr a { color: var(--gold); text-decoration: none; }
+.input-clear-btn {
+  position: absolute; right: 12px; top: 50%; transform: translateY(-50%);
+  background: rgba(255,255,255,0.12); border: none; color: rgba(255,255,255,0.7);
+  border-radius: 50%; width: 22px; height: 22px; font-size: 0.65rem;
+  cursor: pointer; display: none; align-items: center; justify-content: center;
+  transition: background 0.15s, color 0.15s; line-height: 1; padding: 0; z-index: 2;
+}
+.input-clear-btn:hover { background: rgba(212,175,55,0.3); color: var(--gold); }
+.input-clear-btn.visible { display: flex; }
+/* Shift input text so it doesn't go under the clear button */
+.autosuggest-wrapper input { padding-right: 36px; }
+/* ── Date-Time Picker ── */
 .dt-picker { position: relative; }
 .dt-trigger {
   width: 100%; padding: 12px 15px;
@@ -114,41 +127,66 @@ select option { background: #1a3018; color: white; }
 .dt-trigger .dt-icon { color: var(--gold); font-size: 0.85rem; flex-shrink: 0; }
 .dt-trigger .dt-text { flex: 1; font-size: 0.82rem; }
 .dt-trigger .dt-text.placeholder { color: rgba(255,255,255,0.35); }
+
+/* Full-width panel, sits below trigger like a dropdown */
 .dt-panel {
-  position: absolute; top: calc(100% + 6px); left: 0;
-  background: #172e14; border: 1px solid var(--gold);
-  border-radius: 16px; z-index: 9999;
-  box-shadow: 0 20px 50px rgba(0,0,0,0.7);
-  width: 280px; display: none; overflow: hidden;
+  display: none;
+  width: 100%;
+  margin-top: 6px;
+  background: #172e14;
+  border: 1px solid var(--gold);
+  border-radius: 14px;
+  overflow: hidden;
+  box-shadow: 0 12px 36px rgba(0,0,0,0.6);
 }
 .dt-panel.open { display: block; }
-.cal-header { display: flex; align-items: center; justify-content: space-between; padding: 14px 16px 10px; border-bottom: 1px solid rgba(255,255,255,0.08); }
-.cal-nav { background: none; border: none; color: var(--gold); cursor: pointer; font-size: 1rem; padding: 4px 8px; border-radius: 6px; transition: background 0.15s; }
+
+/* Step visibility */
+.dt-step-time { display: none; }
+.dt-panel.show-time .dt-step-cal  { display: none; }
+.dt-panel.show-time .dt-step-time { display: block; }
+
+/* Calendar */
+.cal-header { display: flex; align-items: center; justify-content: space-between; padding: 12px 14px 8px; border-bottom: 1px solid rgba(255,255,255,0.08); }
+.cal-nav { background: none; border: none; color: var(--gold); cursor: pointer; font-size: 1rem; padding: 4px 10px; border-radius: 6px; transition: background 0.15s; }
 .cal-nav:hover { background: var(--gold-dim); }
-.cal-month-year { font-size: 0.9rem; font-weight: 600; color: #fff; font-family: 'Montserrat', sans-serif; }
-.cal-days-header { display: grid; grid-template-columns: repeat(7,1fr); padding: 6px 10px 2px; }
+.cal-month-year { font-size: 0.88rem; font-weight: 600; color: #fff; font-family: 'Montserrat', sans-serif; }
+.cal-days-header { display: grid; grid-template-columns: repeat(7,1fr); padding: 8px 10px 2px; }
 .cal-day-name { text-align: center; font-size: 0.68rem; color: var(--gold); font-weight: 600; opacity: 0.8; }
-.cal-grid { display: grid; grid-template-columns: repeat(7,1fr); padding: 4px 10px 10px; gap: 2px; }
-.cal-cell { text-align: center; padding: 7px 2px; font-size: 0.8rem; border-radius: 8px; cursor: pointer; transition: background 0.15s, color 0.15s; color: rgba(255,255,255,0.85); }
+.cal-grid { display: grid; grid-template-columns: repeat(7,1fr); padding: 4px 10px 12px; gap: 2px; }
+.cal-cell { text-align: center; padding: 8px 2px; font-size: 0.82rem; border-radius: 8px; cursor: pointer; transition: background 0.15s, color 0.15s; color: rgba(255,255,255,0.85); }
 .cal-cell:hover:not(.disabled):not(.empty) { background: var(--gold-dim); color: var(--gold); }
 .cal-cell.today { color: var(--gold); font-weight: 600; }
 .cal-cell.selected { background: var(--gold); color: #000; font-weight: 700; }
 .cal-cell.disabled { opacity: 0.25; cursor: default; }
 .cal-cell.empty { cursor: default; }
-.time-section { border-top: 1px solid rgba(255,255,255,0.08); padding: 12px 16px 14px; }
-.time-label { font-size: 0.72rem; color: var(--gold); font-weight: 600; margin-bottom: 8px; letter-spacing: 0.3px; }
-.time-inputs { display: flex; align-items: center; gap: 8px; justify-content: center; }
-.time-spinner { display: flex; flex-direction: column; align-items: center; gap: 2px; }
-.time-spin-btn { background: rgba(255,255,255,0.08); border: none; color: rgba(255,255,255,0.7); width: 30px; height: 22px; border-radius: 5px; cursor: pointer; font-size: 0.7rem; display: flex; align-items: center; justify-content: center; transition: background 0.15s; }
+
+/* Time step */
+.time-header {
+  display: flex; align-items: center; gap: 8px;
+  padding: 12px 14px 10px; border-bottom: 1px solid rgba(255,255,255,0.08);
+}
+.time-back-btn {
+  background: none; border: none; color: var(--gold); cursor: pointer;
+  font-size: 1.1rem; padding: 2px 8px; border-radius: 6px;
+  transition: background 0.15s; line-height: 1; font-weight: 700;
+}
+.time-back-btn:hover { background: var(--gold-dim); }
+.time-header-date { font-size: 0.85rem; font-weight: 600; color: #fff; flex: 1; }
+.time-body { padding: 16px 14px 14px; }
+.time-label { font-size: 0.72rem; color: var(--gold); font-weight: 600; margin-bottom: 14px; letter-spacing: 0.3px; text-align: center; }
+.time-inputs { display: flex; align-items: center; gap: 10px; justify-content: center; }
+.time-spinner { display: flex; flex-direction: column; align-items: center; gap: 3px; }
+.time-spin-btn { background: rgba(255,255,255,0.08); border: none; color: rgba(255,255,255,0.7); width: 34px; height: 24px; border-radius: 5px; cursor: pointer; font-size: 0.75rem; display: flex; align-items: center; justify-content: center; transition: background 0.15s; }
 .time-spin-btn:hover { background: var(--gold-dim); color: var(--gold); }
-.time-val { background: rgba(255,255,255,0.06); border: 1px solid var(--glass-border); color: #fff; border-radius: 8px; padding: 6px 0; font-size: 1.1rem; font-weight: 600; font-family: 'Montserrat', sans-serif; text-align: center; width: 52px; outline: none; -moz-appearance: textfield; }
+.time-val { background: rgba(255,255,255,0.06); border: 1px solid var(--glass-border); color: #fff; border-radius: 8px; padding: 7px 0; font-size: 1.15rem; font-weight: 600; font-family: 'Montserrat', sans-serif; text-align: center; width: 56px; outline: none; -moz-appearance: textfield; }
 .time-val::-webkit-outer-spin-button, .time-val::-webkit-inner-spin-button { -webkit-appearance: none; }
 .time-val:focus { border-color: var(--gold); }
-.time-colon { font-size: 1.3rem; font-weight: 700; color: var(--gold); line-height: 1; margin-top: -4px; }
-.ampm-toggle { display: flex; flex-direction: column; gap: 3px; }
-.ampm-btn { background: rgba(255,255,255,0.06); border: 1px solid var(--glass-border); color: rgba(255,255,255,0.5); border-radius: 6px; padding: 4px 8px; font-size: 0.7rem; font-weight: 700; cursor: pointer; transition: all 0.15s; font-family: 'Poppins', sans-serif; }
+.time-colon { font-size: 1.4rem; font-weight: 700; color: var(--gold); line-height: 1; margin-top: -4px; }
+.ampm-toggle { display: flex; flex-direction: column; gap: 4px; }
+.ampm-btn { background: rgba(255,255,255,0.06); border: 1px solid var(--glass-border); color: rgba(255,255,255,0.5); border-radius: 6px; padding: 5px 10px; font-size: 0.72rem; font-weight: 700; cursor: pointer; transition: all 0.15s; font-family: 'Poppins', sans-serif; }
 .ampm-btn.active { background: var(--gold); color: #000; border-color: var(--gold); }
-.dt-confirm { display: block; width: calc(100% - 32px); margin: 0 16px 14px; padding: 9px; background: var(--gold); color: #000; border: none; border-radius: 9px; font-weight: 700; font-size: 0.85rem; cursor: pointer; font-family: 'Poppins', sans-serif; transition: opacity 0.15s; }
+.dt-confirm { display: block; width: 100%; margin-top: 14px; padding: 10px; background: var(--gold); color: #000; border: none; border-radius: 9px; font-weight: 700; font-size: 0.88rem; cursor: pointer; font-family: 'Poppins', sans-serif; transition: opacity 0.15s; }
 .dt-confirm:hover { opacity: 0.88; }
 .btn-whatsapp {
   width: 100%; padding: 14px;
@@ -216,6 +254,7 @@ footer a { color: var(--gold); }
       <label data-en="From" data-ta="புறப்படும் இடம்">From</label>
       <div class="autosuggest-wrapper">
         <input type="text" id="fromLocation" data-en-placeholder="e.g. Chennai, Tambaram, T Nagar" data-ta-placeholder="எ.கா. சென்னை, தாம்பரம், டி நகர்" placeholder="e.g. Chennai, Tambaram, T Nagar" autocomplete="off" oninput="handleAutosuggest(this,'fromDropdown','from')" onkeydown="handleKeydown(event,'fromDropdown')">
+        <button class="input-clear-btn" id="fromClear" onclick="clearField('from')" tabindex="-1" aria-label="Clear">&#x2715;</button>
         <div class="suggestions-dropdown" id="fromDropdown" role="listbox"></div>
         <div class="mappls-attr">Powered by <a href="https://about.mappls.com" target="_blank">Mappls</a></div>
       </div>
@@ -225,6 +264,7 @@ footer a { color: var(--gold); }
       <label data-en="To" data-ta="செல்லும் இடம்">To</label>
       <div class="autosuggest-wrapper">
         <input type="text" id="destination" data-en-placeholder="e.g. Bangalore, Madurai, Coimbatore" data-ta-placeholder="எ.கா. பெங்களூரு, மதுரை, கோயம்புத்தூர்" placeholder="e.g. Bangalore, Madurai, Coimbatore" autocomplete="off" oninput="handleAutosuggest(this,'destDropdown','dest')" onkeydown="handleKeydown(event,'destDropdown')">
+        <button class="input-clear-btn" id="destClear" onclick="clearField('dest')" tabindex="-1" aria-label="Clear">&#x2715;</button>
         <div class="suggestions-dropdown" id="destDropdown" role="listbox"></div>
         <div class="mappls-attr">Powered by <a href="https://about.mappls.com" target="_blank">Mappls</a></div>
       </div>
@@ -235,37 +275,47 @@ footer a { color: var(--gold); }
       <div class="dt-picker" id="startDatePicker">
         <div class="dt-trigger" id="startDateTrigger" onclick="togglePanel('startDatePicker')">
           <i class="fas fa-calendar-alt dt-icon"></i>
-          <span class="dt-text placeholder" id="startDateDisplay">Pick date &amp; time</span>
+          <span class="dt-text placeholder" id="startDateDisplay" data-en-placeholder="Pick date &amp; time" data-ta-placeholder="புறப்படும் தேதி &amp; நேரம் தேர்ந்தெடுக்கவும்">Pick date &amp; time</span>
         </div>
         <div class="dt-panel" id="startDatePanel">
-          <div class="cal-header">
-            <button class="cal-nav" onclick="changeMonth('startDatePicker',-1)">&#8249;</button>
-            <span class="cal-month-year" id="startDateMonthYear"></span>
-            <button class="cal-nav" onclick="changeMonth('startDatePicker',1)">&#8250;</button>
+          <!-- Step 1: Calendar -->
+          <div class="dt-step-cal">
+            <div class="cal-header">
+              <button class="cal-nav" onclick="changeMonth('startDatePicker',-1)">&#8249;</button>
+              <span class="cal-month-year" id="startDateMonthYear"></span>
+              <button class="cal-nav" onclick="changeMonth('startDatePicker',1)">&#8250;</button>
+            </div>
+            <div class="cal-days-header"><div class="cal-day-name">Su</div><div class="cal-day-name">Mo</div><div class="cal-day-name">Tu</div><div class="cal-day-name">We</div><div class="cal-day-name">Th</div><div class="cal-day-name">Fr</div><div class="cal-day-name">Sa</div></div>
+            <div class="cal-grid" id="startDateGrid"></div>
           </div>
-          <div class="cal-days-header"><div class="cal-day-name">Su</div><div class="cal-day-name">Mo</div><div class="cal-day-name">Tu</div><div class="cal-day-name">We</div><div class="cal-day-name">Th</div><div class="cal-day-name">Fr</div><div class="cal-day-name">Sa</div></div>
-          <div class="cal-grid" id="startDateGrid"></div>
-          <div class="time-section">
-            <div class="time-label">SELECT TIME</div>
-            <div class="time-inputs">
-              <div class="time-spinner">
-                <button class="time-spin-btn" onclick="spinTime('start','h',1)">▲</button>
-                <input class="time-val" id="startHr" type="number" min="1" max="12" value="10" oninput="clampTime('start','h')">
-                <button class="time-spin-btn" onclick="spinTime('start','h',-1)">▼</button>
+          <!-- Step 2: Time -->
+          <div class="dt-step-time">
+            <div class="time-header">
+              <button class="time-back-btn" onclick="goBackToDate('startDatePicker')">&#8249;</button>
+              <span class="time-header-date" id="startDateChosenDate"></span>
+            </div>
+            <div class="time-body">
+              <div class="time-label" data-en="SELECT TIME" data-ta="நேரம் தேர்ந்தெடுக்கவும்">SELECT TIME</div>
+              <div class="time-inputs">
+                <div class="time-spinner">
+                  <button class="time-spin-btn" onclick="spinTime('start','h',1)">▲</button>
+                  <input class="time-val" id="startHr" type="number" min="1" max="12" value="10" oninput="clampTime('start','h')">
+                  <button class="time-spin-btn" onclick="spinTime('start','h',-1)">▼</button>
+                </div>
+                <div class="time-colon">:</div>
+                <div class="time-spinner">
+                  <button class="time-spin-btn" onclick="spinTime('start','m',1)">▲</button>
+                  <input class="time-val" id="startMin" type="number" min="0" max="59" value="00" oninput="clampTime('start','m')">
+                  <button class="time-spin-btn" onclick="spinTime('start','m',-1)">▼</button>
+                </div>
+                <div class="ampm-toggle">
+                  <button class="ampm-btn active" id="startAM" onclick="setAmPm('start','AM')">AM</button>
+                  <button class="ampm-btn" id="startPM" onclick="setAmPm('start','PM')">PM</button>
+                </div>
               </div>
-              <div class="time-colon">:</div>
-              <div class="time-spinner">
-                <button class="time-spin-btn" onclick="spinTime('start','m',1)">▲</button>
-                <input class="time-val" id="startMin" type="number" min="0" max="59" value="00" oninput="clampTime('start','m')">
-                <button class="time-spin-btn" onclick="spinTime('start','m',-1)">▼</button>
-              </div>
-              <div class="ampm-toggle">
-                <button class="ampm-btn active" id="startAM" onclick="setAmPm('start','AM')">AM</button>
-                <button class="ampm-btn" id="startPM" onclick="setAmPm('start','PM')">PM</button>
-              </div>
+              <button class="dt-confirm" onclick="confirmDT('startDatePicker','start')" data-en="Confirm" data-ta="உறுதிப்படுத்துக">Confirm</button>
             </div>
           </div>
-          <button class="dt-confirm" onclick="confirmDT('startDatePicker','start')">Confirm</button>
         </div>
       </div>
     </div>
@@ -275,37 +325,47 @@ footer a { color: var(--gold); }
       <div class="dt-picker" id="endDatePicker">
         <div class="dt-trigger" id="endDateTrigger" onclick="togglePanel('endDatePicker')">
           <i class="fas fa-calendar-alt dt-icon"></i>
-          <span class="dt-text placeholder" id="endDateDisplay">Pick date &amp; time</span>
+          <span class="dt-text placeholder" id="endDateDisplay" data-en-placeholder="Return date &amp; time" data-ta-placeholder="திரும்பும் தேதி &amp; நேரம்">Return date &amp; time</span>
         </div>
         <div class="dt-panel" id="endDatePanel">
-          <div class="cal-header">
-            <button class="cal-nav" onclick="changeMonth('endDatePicker',-1)">&#8249;</button>
-            <span class="cal-month-year" id="endDateMonthYear"></span>
-            <button class="cal-nav" onclick="changeMonth('endDatePicker',1)">&#8250;</button>
+          <!-- Step 1: Calendar -->
+          <div class="dt-step-cal">
+            <div class="cal-header">
+              <button class="cal-nav" onclick="changeMonth('endDatePicker',-1)">&#8249;</button>
+              <span class="cal-month-year" id="endDateMonthYear"></span>
+              <button class="cal-nav" onclick="changeMonth('endDatePicker',1)">&#8250;</button>
+            </div>
+            <div class="cal-days-header"><div class="cal-day-name">Su</div><div class="cal-day-name">Mo</div><div class="cal-day-name">Tu</div><div class="cal-day-name">We</div><div class="cal-day-name">Th</div><div class="cal-day-name">Fr</div><div class="cal-day-name">Sa</div></div>
+            <div class="cal-grid" id="endDateGrid"></div>
           </div>
-          <div class="cal-days-header"><div class="cal-day-name">Su</div><div class="cal-day-name">Mo</div><div class="cal-day-name">Tu</div><div class="cal-day-name">We</div><div class="cal-day-name">Th</div><div class="cal-day-name">Fr</div><div class="cal-day-name">Sa</div></div>
-          <div class="cal-grid" id="endDateGrid"></div>
-          <div class="time-section">
-            <div class="time-label">SELECT TIME</div>
-            <div class="time-inputs">
-              <div class="time-spinner">
-                <button class="time-spin-btn" onclick="spinTime('end','h',1)">▲</button>
-                <input class="time-val" id="endHr" type="number" min="1" max="12" value="06" oninput="clampTime('end','h')">
-                <button class="time-spin-btn" onclick="spinTime('end','h',-1)">▼</button>
+          <!-- Step 2: Time -->
+          <div class="dt-step-time">
+            <div class="time-header">
+              <button class="time-back-btn" onclick="goBackToDate('endDatePicker')">&#8249;</button>
+              <span class="time-header-date" id="endDateChosenDate"></span>
+            </div>
+            <div class="time-body">
+              <div class="time-label" data-en="SELECT TIME" data-ta="நேரம் தேர்ந்தெடுக்கவும்">SELECT TIME</div>
+              <div class="time-inputs">
+                <div class="time-spinner">
+                  <button class="time-spin-btn" onclick="spinTime('end','h',1)">▲</button>
+                  <input class="time-val" id="endHr" type="number" min="1" max="12" value="06" oninput="clampTime('end','h')">
+                  <button class="time-spin-btn" onclick="spinTime('end','h',-1)">▼</button>
+                </div>
+                <div class="time-colon">:</div>
+                <div class="time-spinner">
+                  <button class="time-spin-btn" onclick="spinTime('end','m',1)">▲</button>
+                  <input class="time-val" id="endMin" type="number" min="0" max="59" value="00" oninput="clampTime('end','m')">
+                  <button class="time-spin-btn" onclick="spinTime('end','m',-1)">▼</button>
+                </div>
+                <div class="ampm-toggle">
+                  <button class="ampm-btn active" id="endAM" onclick="setAmPm('end','AM')">AM</button>
+                  <button class="ampm-btn" id="endPM" onclick="setAmPm('end','PM')">PM</button>
+                </div>
               </div>
-              <div class="time-colon">:</div>
-              <div class="time-spinner">
-                <button class="time-spin-btn" onclick="spinTime('end','m',1)">▲</button>
-                <input class="time-val" id="endMin" type="number" min="0" max="59" value="00" oninput="clampTime('end','m')">
-                <button class="time-spin-btn" onclick="spinTime('end','m',-1)">▼</button>
-              </div>
-              <div class="ampm-toggle">
-                <button class="ampm-btn active" id="endAM" onclick="setAmPm('end','AM')">AM</button>
-                <button class="ampm-btn" id="endPM" onclick="setAmPm('end','PM')">PM</button>
-              </div>
+              <button class="dt-confirm" onclick="confirmDT('endDatePicker','end')" data-en="Confirm" data-ta="உறுதிப்படுத்துக">Confirm</button>
             </div>
           </div>
-          <button class="dt-confirm" onclick="confirmDT('endDatePicker','end')">Confirm</button>
         </div>
       </div>
     </div>
@@ -319,7 +379,7 @@ footer a { color: var(--gold); }
     </div>
 
     <button class="btn-whatsapp" onclick="sendToWhatsApp()">
-      <i class="fab fa-whatsapp"></i>
+      <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="white" style="flex-shrink:0"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
       <span data-en="Book via WhatsApp" data-ta="வாட்ஸ்அப்பில் பதிவு செய்க">Book via WhatsApp</span>
     </button>
   </div>
@@ -446,14 +506,32 @@ const doFetch = debounce(async (query, dropId, field) => {
 
 function handleAutosuggest(input, dropId, field) {
   selectedPlace[field] = null;
+  // Show/hide clear button
+  const clearBtn = document.getElementById(field === 'from' ? 'fromClear' : 'destClear');
+  if (clearBtn) clearBtn.classList.toggle('visible', input.value.length > 0);
   doFetch(input.value.trim(), dropId, field);
 }
 
 function pickPlace(el) {
   const f = el.dataset.field;
-  document.getElementById(f === 'from' ? 'fromLocation' : 'destination').value = el.dataset.name;
+  const inputEl = document.getElementById(f === 'from' ? 'fromLocation' : 'destination');
+  inputEl.value = el.dataset.name;
   selectedPlace[f] = { name: el.dataset.name, addr: el.dataset.addr, eloc: el.dataset.eloc };
+  // Show clear button after selection
+  const clearBtn = document.getElementById(f === 'from' ? 'fromClear' : 'destClear');
+  if (clearBtn) clearBtn.classList.add('visible');
   closeDD(el.closest('.suggestions-dropdown').id);
+}
+
+function clearField(field) {
+  const inputEl = document.getElementById(field === 'from' ? 'fromLocation' : 'destination');
+  const dropId  = field === 'from' ? 'fromDropdown' : 'destDropdown';
+  const clearBtn = document.getElementById(field === 'from' ? 'fromClear' : 'destClear');
+  inputEl.value = '';
+  selectedPlace[field] = null;
+  if (clearBtn) clearBtn.classList.remove('visible');
+  closeDD(dropId);
+  inputEl.focus();
 }
 
 function handleKeydown(e, dropId) {
@@ -484,10 +562,13 @@ function quickFill(field, name) {
   document.getElementById(field === 'from' ? 'fromLocation' : 'destination').value = name;
   selectedPlace[field] = { name, addr: '', eloc: '' };
   closeDD(field === 'from' ? 'fromDropdown' : 'destDropdown');
+  const clearBtn = document.getElementById(field === 'from' ? 'fromClear' : 'destClear');
+  if (clearBtn) clearBtn.classList.add('visible');
 }
 
-// ── Custom Date-Time Picker ───────────────────────
+// ── Custom Date-Time Picker (two-step: date → time) ──────
 const MONTHS = ['January','February','March','April','May','June','July','August','September','October','November','December'];
+const MONTHS_SHORT = ['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'];
 const calState = {
   startDatePicker: { year: new Date().getFullYear(), month: new Date().getMonth(), selected: null },
   endDatePicker:   { year: new Date().getFullYear(), month: new Date().getMonth(), selected: null }
@@ -505,8 +586,11 @@ function renderCalendar(id) {
   for (let i = 0; i < firstDay; i++) html += '<div class="cal-cell empty"></div>';
   for (let d = 1; d <= days; d++) {
     const date = new Date(s.year, s.month, d);
-    const cls = ['cal-cell', date < today ? 'disabled' : '', date.toDateString() === today.toDateString() ? 'today' : '', s.selected && date.toDateString() === s.selected.toDateString() ? 'selected' : ''].join(' ').trim();
-    html += `<div class="${cls}" onclick="selectDay('${id}',${s.year},${s.month},${d})">${d}</div>`;
+    const isPast = date < today;
+    const isToday = date.toDateString() === today.toDateString();
+    const isSel = s.selected && date.toDateString() === s.selected.toDateString();
+    const cls = ['cal-cell', isPast?'disabled':'', isToday?'today':'', isSel?'selected':''].join(' ').trim();
+    html += `<div class="${cls}" data-picker="${id}" data-y="${s.year}" data-m="${s.month}" data-d="${d}">${d}</div>`;
   }
   grid.innerHTML = html;
 }
@@ -519,28 +603,65 @@ function changeMonth(id, dir) {
   renderCalendar(id);
 }
 
-function selectDay(id, y, m, d) {
-  const date = new Date(y, m, d);
-  const today = new Date(); today.setHours(0,0,0,0);
-  if (date < today) return;
-  calState[id].selected = date;
-  renderCalendar(id);
+// Single delegated listener on document for cal-cell clicks
+document.addEventListener('click', function(e) {
+  // ── Calendar cell click ──
+  const cell = e.target.closest('.cal-cell');
+  if (cell && !cell.classList.contains('disabled') && !cell.classList.contains('empty')) {
+    e.stopPropagation();
+    const id = cell.dataset.picker;
+    const y  = parseInt(cell.dataset.y);
+    const m  = parseInt(cell.dataset.m);
+    const d  = parseInt(cell.dataset.d);
+    const date = new Date(y, m, d);
+    const today = new Date(); today.setHours(0,0,0,0);
+    if (date < today) return;
+    calState[id].selected = date;
+    renderCalendar(id);
+    const p = id === 'startDatePicker' ? 'start' : 'end';
+    document.getElementById(p + 'DateChosenDate').textContent =
+      `${date.getDate()} ${MONTHS_SHORT[date.getMonth()]} ${date.getFullYear()}`;
+    document.getElementById(id.replace('Picker','Panel')).classList.add('show-time');
+    return;
+  }
+
+  // ── Outside click — close all panels ──
+  if (!e.target.closest('.dt-picker') && !e.target.closest('.autosuggest-wrapper')) {
+    document.querySelectorAll('.dt-panel').forEach(p => {
+      p.classList.remove('open');
+      p.classList.remove('show-time');
+    });
+    document.querySelectorAll('.dt-trigger').forEach(t => t.classList.remove('open'));
+    ['fromDropdown','destDropdown'].forEach(closeDD);
+  }
+});
+
+function goBackToDate(id) {
+  document.getElementById(id.replace('Picker','Panel')).classList.remove('show-time');
 }
 
 function togglePanel(id) {
-  const panel = document.getElementById(id.replace('Picker','Panel'));
+  const panel   = document.getElementById(id.replace('Picker','Panel'));
   const trigger = document.getElementById(id.replace('Picker','Trigger'));
-  const isOpen = panel.classList.contains('open');
-  document.querySelectorAll('.dt-panel').forEach(p => p.classList.remove('open'));
+  const isOpen  = panel.classList.contains('open');
+  // Close all other panels first
+  document.querySelectorAll('.dt-panel').forEach(p => {
+    p.classList.remove('open');
+    p.classList.remove('show-time');
+  });
   document.querySelectorAll('.dt-trigger').forEach(t => t.classList.remove('open'));
-  if (!isOpen) { panel.classList.add('open'); trigger.classList.add('open'); renderCalendar(id); }
+  if (!isOpen) {
+    panel.classList.add('open');
+    trigger.classList.add('open');
+    renderCalendar(id);
+  }
 }
 
 function spinTime(p, part, dir) {
   const el = document.getElementById(p + (part==='h'?'Hr':'Min'));
   let v = parseInt(el.value) + dir;
-  if (part==='h') { if(v>12) v=1; if(v<1) v=12; }
-  else            { if(v>59) v=0; if(v<0) v=59; }
+  if (part==='h') { if(v>12) v=1;  if(v<1)  v=12; }
+  else            { if(v>59) v=0;  if(v<0)  v=59; }
   el.value = String(v).padStart(2,'0');
 }
 
@@ -563,22 +684,17 @@ function confirmDT(id, p) {
   const hr   = parseInt(document.getElementById(p+'Hr').value);
   const min  = document.getElementById(p+'Min').value;
   const ampm = document.getElementById(p+'AM').classList.contains('active') ? 'AM' : 'PM';
-  const display = `${s.selected.getDate()} ${MONTHS[s.selected.getMonth()].slice(0,3)} ${s.selected.getFullYear()}, ${String(hr).padStart(2,'0')}:${min} ${ampm}`;
+  const display = `${s.selected.getDate()} ${MONTHS_SHORT[s.selected.getMonth()]} ${s.selected.getFullYear()}, ${String(hr).padStart(2,'0')}:${min} ${ampm}`;
   dtValues[p] = display;
   const dispEl = document.getElementById(p+'DateDisplay');
   dispEl.textContent = display;
   dispEl.classList.remove('placeholder');
-  document.getElementById(id.replace('Picker','Panel')).classList.remove('open');
+  const panel = document.getElementById(id.replace('Picker','Panel'));
+  panel.classList.remove('open');
+  panel.classList.remove('show-time');
   document.getElementById(id.replace('Picker','Trigger')).classList.remove('open');
 }
 
-document.addEventListener('click', e => {
-  if (!e.target.closest('.dt-picker') && !e.target.closest('.autosuggest-wrapper')) {
-    document.querySelectorAll('.dt-panel').forEach(p => p.classList.remove('open'));
-    document.querySelectorAll('.dt-trigger').forEach(t => t.classList.remove('open'));
-    ['fromDropdown','destDropdown'].forEach(closeDD);
-  }
-});
 
 // ── Language ──────────────────────────────────────
 let currentLang = 'en';
@@ -588,9 +704,21 @@ function setLang(lang) {
   document.getElementById('htmlRoot').setAttribute('lang', lang==='ta'?'ta':'en');
   document.getElementById('btnEn').classList.toggle('active', lang==='en');
   document.getElementById('btnTa').classList.toggle('active', lang==='ta');
-  document.querySelectorAll('[data-en]').forEach(el => { const t=el.getAttribute('data-'+lang); if(t) el.innerHTML=t; });
+  document.querySelectorAll('[data-en]').forEach(el => {
+    // Skip date display spans — handle separately below
+    if (el.id === 'startDateDisplay' || el.id === 'endDateDisplay') return;
+    const t = el.getAttribute('data-'+lang); if(t) el.innerHTML=t;
+  });
   document.querySelectorAll('input[data-en-placeholder]').forEach(el => { const ph=el.getAttribute('data-'+lang+'-placeholder'); if(ph) el.placeholder=ph; });
   document.querySelectorAll('select option[data-en]').forEach(el => { const t=el.getAttribute('data-'+lang); if(t) el.textContent=t; });
+  // Translate date display spans only if still showing placeholder text
+  ['startDateDisplay','endDateDisplay'].forEach(elId => {
+    const el = document.getElementById(elId);
+    if (el && el.classList.contains('placeholder')) {
+      const ph = el.getAttribute('data-'+lang+'-placeholder') || el.getAttribute('data-'+lang);
+      if (ph) el.innerHTML = ph;
+    }
+  });
 }
 
 // ── WhatsApp ──────────────────────────────────────
