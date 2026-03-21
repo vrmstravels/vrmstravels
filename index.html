@@ -365,39 +365,24 @@ footer a { color: var(--gold); }
 
 <script>
 // ══════════════════════════════════════════════════
-//  CLOUDFLARE WORKER — proxies Mappls + encrypts response
+//  MAPPLS TOKEN — obfuscated (not plain text)
+//  Domain whitelisted to vrmstravels.com by Mappls
+//  Replace _c array with YOUR obfuscated token from
+//  the token-obfuscator.html tool
 // ══════════════════════════════════════════════════
-const WORKER = 'https://vrms-mappls-proxy.booking-66d.workers.dev';
+// ── Mappls token (obfuscated, domain-whitelisted) ────
+const _k = [0x56,0x52,0x4D,0x53];
+const _c = ["NCU7NSMx","LyIvPSox","NyUuICUn","Ojo9MTgp","ICo3JjU5","KDwwMzQk"];
+const _t = () => {
+  const b = atob(_c.join(''));
+  return [...b].map((c,i) =>
+    String.fromCharCode(c.charCodeAt(0) ^ _k[i % 4])
+  ).join('');
+};
 
-// AES-GCM key — must match worker.js AES_KEY_HEX
-// Stored as byte array so it doesn't appear as plain text
-const _aesKey = [
-  0x56,0x52,0x4D,0x53,0x74,0x72,0x61,0x76,
-  0x65,0x6C,0x73,0x41,0x45,0x53,0x32,0x35,
-  0x4B,0x65,0x79,0x32,0x30,0x56,0x73,0x00
-];
-
-async function getCryptoKey() {
-  return crypto.subtle.importKey(
-    'raw', new Uint8Array(_aesKey),
-    { name: 'AES-GCM' }, false, ['decrypt']
-  );
-}
-
-async function decryptResponse(urlSafeB64) {
-  // Restore standard base64 from URL-safe base64
-  const b64 = urlSafeB64
-    .replace(/-/g, '+')
-    .replace(/_/g, '/')
-    + '=='.slice(0, (4 - urlSafeB64.length % 4) % 4);
-
-  const combined   = Uint8Array.from(atob(b64), c => c.charCodeAt(0));
-  const iv         = combined.slice(0, 12);
-  const ciphertext = combined.slice(12);
-  const key        = await getCryptoKey();
-  const plainBuf   = await crypto.subtle.decrypt({ name: 'AES-GCM', iv }, key, ciphertext);
-  return JSON.parse(new TextDecoder().decode(plainBuf));
-}
+// Usage: use _t() wherever you need the access_token
+// Example fetch:
+// const url = `https://search.mappls.com/search/places/autosuggest/json?query=${encodeURIComponent(query)}&access_token=${_t()}&region=IND`;
 
 // ── GPS for biased results ────────────────────────
 let userLat = null, userLng = null;
@@ -417,7 +402,7 @@ function debounce(fn, ms) {
   return (...args) => { clearTimeout(t); t = setTimeout(() => fn(...args), ms); };
 }
 
-// ── Autosuggest — via Worker with encrypted response ──
+// ── Autosuggest — direct Mappls call ─────────────
 const doFetch = debounce(async (query, dropId, field) => {
   const dd = document.getElementById(dropId);
   if (!query || query.length < 2) { closeDD(dropId); return; }
@@ -426,12 +411,11 @@ const doFetch = debounce(async (query, dropId, field) => {
   dd.classList.add('open');
 
   try {
-    const params = new URLSearchParams({ query });
-    if (userLat && userLng) params.set('location', `${userLat},${userLng}`);
+    let url = `https://search.mappls.com/search/places/autosuggest/json?query=${encodeURIComponent(query)}&access_token=${_t()}&region=IND`;
+    if (userLat && userLng) url += `&location=${userLat},${userLng}`;
 
-    const res    = await fetch(`${WORKER}/autosuggest?${params}`);
-    const cipher = await res.text();              // URL-safe base64 ciphertext
-    const data   = await decryptResponse(cipher); // AES-GCM decrypt
+    const res    = await fetch(url);
+    const data   = await res.json();
     const places = data.suggestedLocations || [];
 
     if (!places.length) {
@@ -456,7 +440,7 @@ const doFetch = debounce(async (query, dropId, field) => {
 
   } catch(e) {
     dd.innerHTML = '<div class="suggestion-empty">Could not load results. Try again.</div>';
-    console.error('Decrypt error:', e);
+    console.error('Autosuggest error:', e);
   }
 }, 350);
 
